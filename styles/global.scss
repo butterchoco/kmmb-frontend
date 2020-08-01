@@ -1,9 +1,43 @@
+@font-face {
+  font-family: "League Spartan";
+  src: url("/fonts/leaguespartan-bold.woff2") format("woff2");
+}
+
 body,
 html {
   margin: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+button {
+  font-family: "League Spartan", sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 14px;
 }
 
 h1,
@@ -22,12 +56,33 @@ a {
 
 button {
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 0.5rem 0.96rem;
   border: 0;
   border-radius: 5px;
   text-transform: capitalize;
-  font-weight: bold;
-  margin: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & ~ button {
+    margin-left: 16px;
+  }
+
+  &.basic {
+    background: transparent;
+
+    &:hover {
+      background: darken($color: $white, $amount: 5%);
+    }
+
+    &.primary {
+      color: $primary;
+    }
+
+    &.secondary {
+      color: $secondary;
+    }
+  }
 
   &.primary {
     background: $secondary;

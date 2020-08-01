@@ -1,54 +1,131 @@
-.hero {
+.landingPageContainer {
+  padding: 10vh 20vw;
+  background: $primary;
+  color: $white;
   display: flex;
-  padding: 5vh 0;
-  flex-wrap: wrap;
+
+  @media screen and (max-width: 1024px) {
+    padding: 10vh 10vw;
+  }
 
   &__textContainer--left {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 5%;
-    text-align: left;
+    align-items: flex-start;
+    justify-items: center;
   }
 
   &__textContainer--right {
     flex: 1;
-    order: 2;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-end;
-    padding: 5%;
-    text-align: right;
+    justify-items: center;
   }
 
   &__textContainer--center {
-    flex-grow: 1;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 5%;
+    justify-items: center;
     text-align: center;
   }
 
   &__title {
-    margin-bottom: 5px;
-  }
-
-  &__tag {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   &__description {
-    margin: 10px 0;
-    font-size: 0.85em;
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    flex: 1;
+  }
+}
+
+.heroHeader {
+  padding: 5vh 0;
+  height: 80vh;
+  background: linear-gradient(180deg, #93f3e7, #ff7614);
+
+  &__textContainer {
+    background: url("/images/hand.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__title {
+    color: $primary;
+    background: white;
+    padding: 2px 20px 0 20px;
+    font-size: 64px;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+
+  &__tag {
+    font-weight: bold;
+    font-size: 18px;
+    color: $primary;
+    background: white;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    white-space: nowrap;
   }
 
   &__cto {
+    margin-top: 2rem;
     display: flex;
-    margin-top: 10px;
+    white-space: nowrap;
+
+    button {
+      padding: 10px 20px;
+      font-size: 20px;
+    }
+  }
+}
+
+.tagline {
+  background: $primary;
+  color: $white;
+
+  &__container {
+    height: 120vh;
+    background: url("/images/vector_1.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__logo {
+    max-width: 40vw;
+    margin-bottom: 2rem;
+  }
+
+  &__description {
+    max-width: 600px;
+  }
+
+  &__vector1 {
+    position: relative;
+    right: 0;
   }
 }
 
@@ -71,7 +148,7 @@
     flex-wrap: wrap;
     max-width: 50vw;
 
-    @media screen and (max-width: 964px) {
+    @media screen and (max-width: 1024px) {
       max-width: 90vw;
     }
 
@@ -89,7 +166,8 @@
   justify-content: center;
   padding: 20vh 0;
   margin: 0 auto;
-  max-width: 70vw;
+  background: $primary;
+  color: $white;
 
   &__title {
     text-align: center;
@@ -102,8 +180,26 @@
 }
 
 .youtubeEmbed {
-  @media screen and (min-width: 768px) {
-    min-height: 45vh;
-    min-width: 75vh;
+  background: $primary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20vh 0;
+  color: $white;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__video {
+    width: 40vw;
+    height: 22vw;
+
+    @media screen and (max-width: 1024px) {
+      width: 60vw;
+      height: 33vw;
+    }
   }
 }

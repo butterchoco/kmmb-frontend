@@ -12,40 +12,47 @@ import { useRouter } from "next/router";
 const Navbar = ({ children, window }) => {
   const router = useRouter();
   const links = [
-    { name: "Beranda", to: "/" },
-    { name: "about", to: "/about" },
-    { name: "acara", to: "/event" },
+    { name: "Tentang Kami", to: "#aboutLandingPage" },
+    { name: "Acara", to: "#eventLandingPage" },
+    { name: "Timeline", to: "#timelineLandingPage" },
   ];
   const trigger = useScrollTrigger({ target: window ? window() : undefined });
+  const trigger2 = useScrollTrigger({
+    target: window ? window() : undefined,
+    disableHysteresis: true,
+    threshold: 100,
+  });
 
   return (
     <Slide appear={false} direction="down" in={!trigger}>
-      <AppBar position="sticky" color={"inherit"} elevation={0}>
+      <AppBar
+        position="sticky"
+        elevation={0}
+        style={{ backgroundColor: trigger2 ? "white" : "#93F3E7" }}
+      >
         <Toolbar id="back-to-top-anchor">
-          <Typography></Typography>
+          <Typography>
+            <img
+              style={{ height: "42px" }}
+              src="/images/logo_KMMB.png"
+              alt="logo_KMMB"
+            />
+          </Typography>
           <Typography
             style={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}
           >
             {links.map((data, index) => (
               <Link href={data.to} key={index}>
-                <Button
-                  size="small"
-                  className="navbar__link"
-                  style={{ margin: "0 10px" }}
-                  color={router.pathname == data.to ? "secondary" : "inherit"}
+                <button
+                  className={
+                    router.pathname == data.to ? "basic secondary" : "basic"
+                  }
                 >
                   {data.name}
-                </Button>
+                </button>
               </Link>
             ))}
-            <Button
-              size="small"
-              variant="contained"
-              color="secondary"
-              disableElevation
-            >
-              Login
-            </Button>
+            <button className="primary">Login</button>
           </Typography>
         </Toolbar>
       </AppBar>
