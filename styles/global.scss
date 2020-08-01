@@ -3,6 +3,7 @@ html {
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -17,4 +18,31 @@ a {
   text-decoration: none;
   color: black;
   cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin: 0 8px;
+
+  &.primary {
+    background: $secondary;
+    color: $white;
+
+    &:hover {
+      background: darken($color: $secondary, $amount: 5%);
+    }
+  }
+
+  &.secondary {
+    background: $white;
+    color: $secondary;
+    &:hover {
+      background: darken($color: $white, $amount: 5%);
+    }
+  }
 }

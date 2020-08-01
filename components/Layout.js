@@ -1,61 +1,50 @@
 import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-import { makeStyles } from "@material-ui/core/styles";
-import Toolbar from "@material-ui/core/Toolbar";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Zoom from "@material-ui/core/Zoom";
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
 import Navbar from "./Navbar/Navbar";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    position: "fixed",
-    bottom: "40px",
-    right: "40px",
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#FF7614",
+    },
+    secondary: {
+      main: "#841361",
+    },
   },
-}));
+});
 
-function ScrollTop(props) {
+const Layout = (props) => {
   const { children, window } = props;
-  const classes = useStyles();
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
     threshold: 100,
   });
 
-  const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      "#back-to-top-anchor"
-    );
-
-    if (anchor) {
-      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  };
-
   return (
-    <Zoom in={trigger}>
-      <div onClick={handleClick} role="presentation" className={classes.root}>
-        {children}
-      </div>
-    </Zoom>
-  );
-}
-
-const Layout = (props) => {
-  const { children } = props;
-
-  return (
-    <div>
+    <ThemeProvider theme={theme}>
       <Navbar />
-      <Toolbar id="back-to-top-anchor" />
+      <span id="back-to-top-anchor"></span>
       {children}
-      <ScrollTop {...props}>
-        <Fab color="secondary" size="small" aria-label="scroll back to top">
-          <KeyboardArrowUpIcon />
-        </Fab>
-      </ScrollTop>
-    </div>
+      <Zoom in={trigger}>
+        <a
+          href="#back-to-top-anchor"
+          style={{
+            position: "fixed",
+            bottom: "40px",
+            right: "40px",
+          }}
+        >
+          <Fab color="primary" size="small" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </a>
+      </Zoom>
+    </ThemeProvider>
   );
 };
 
