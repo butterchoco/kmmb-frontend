@@ -68,7 +68,7 @@ const TimelineKMMB = () => {
                 />
               )}
               {index == timeline.length - 1 ? (
-                <Box
+                <div
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -91,12 +91,7 @@ const TimelineKMMB = () => {
                       justifyContent: "center",
                     }}
                   >
-                    <Typography
-                      component="h2"
-                      style={{ color: "#841361", fontWeight: "bold" }}
-                    >
-                      +3
-                    </Typography>
+                    <h4 style={{ color: "#841361", fontWeight: "bold" }}>+3</h4>
                   </TimelineDot>
                   <Paper
                     elevation={0}
@@ -105,16 +100,20 @@ const TimelineKMMB = () => {
                       color: "#841361",
                       fontSize: "14px",
                       fontWeight: "bold",
-                      display: "flex",
-                      alignItems: "center",
-                      height: "26px",
-                      padding: "5px 10px",
                       whiteSpace: "nowrap",
                     }}
                   >
-                    Lihat 3 Acara lainnya <KeyboardArrowDown />
+                    <p
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        padding: "5px 5px 5px 10px",
+                      }}
+                    >
+                      Lihat 3 Acara lainnya <KeyboardArrowDown />
+                    </p>
                   </Paper>
-                </Box>
+                </div>
               ) : null}
             </TimelineSeparator>
             <TimelineContent>
@@ -126,18 +125,15 @@ const TimelineKMMB = () => {
                   padding: "0 10px",
                 }}
               >
-                <Typography
+                <p
                   style={{
-                    fontSize: "12px",
                     marginTop: "-5px",
                     marginBottom: "10px",
                   }}
                 >
                   {data.date}
-                </Typography>
-                <Typography style={{ fontWeight: "bold", fontSize: "24px" }}>
-                  {data.description}
-                </Typography>
+                </p>
+                <h4 style={{ fontWeight: "bold" }}>{data.description}</h4>
               </Paper>
             </TimelineContent>
           </TimelineItem>

@@ -6,17 +6,17 @@ const EventKMMB = () => {
     {
       title: "E-Presentation Competition",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ",
+        "Konferensi keilmuan yang dikemas dalam sebuah kompetisi bertaraf nasional dimana mahasiswa didorong untuk mempresentasikan suatu ide kreatif, inovatif, dan solutif dalam bentuk electronic presentation yang menggambarkan wajah baru Indonesia pasca berbagai fenomena yang terjadi beberapa waktu terakhir ini.",
     },
     {
       title: "Ikrar Mahasiswa Merdeka",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ",
+        "Pembacaan naskah Ikrar Mahasiswa Merdeka yang merupakan sebuah naskah dibuat oleh para mahasiswa Indonesia, dengan pengumpulan aspirasi dan diskusi oleh para mahasiswa untuk menyuarakan ikrar atas kontribusi nyata untuk pembangunan Indonesia di era yang baru.",
     },
     {
       title: "Talkshow KMMB",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ",
+        "Kegiatan ini menekankan pentingnya aktualisasi diri mahasiswa agar menjadi mahasiswa yang merdeka dari batasan-batasan yang selama ini ada, merdeka dalam menentukan pilihan mereka sendiri, merdeka dalam belajar, serta merdeka dalam berkontribusi untuk membangun Indonesia.",
     },
   ];
 

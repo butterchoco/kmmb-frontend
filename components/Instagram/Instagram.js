@@ -15,7 +15,6 @@ const Instagram = ({ username }) => {
 		setIsLoading(true);
 		await Axios.get(`https://instagram.com/${username}/?__a=1`)
 			.then(({ data }) => {
-				console.log(data.graphql.user);
 				const user = data.graphql.user;
 				const tempProfile = {
 					username: user.username,
@@ -82,9 +81,9 @@ const Instagram = ({ username }) => {
 					</div>
 				</div>
 				<div className="ig__profile__description">
-					<p className="ig__profile__description__nickname">
+					<h4 className="ig__profile__description__nickname">
 						{profile.nickname}
-					</p>
+					</h4>
 					<p className="ig__profile__description__bio">{profile.bio}</p>
 					<a
 						className="ig__profile__description__web"

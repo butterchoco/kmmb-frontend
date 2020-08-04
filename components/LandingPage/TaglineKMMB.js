@@ -8,10 +8,11 @@ const TaglineKMMB = () => {
           alt="tagline"
         />
         <p className="tagline__description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          KMMB 2020 mengangkat tema “Break Our Boundaries!” yang merupakan wadah
+          unjuk diri bagi mahasiswa dalam peranannya sebagai pemuda dengan
+          memberikan pemikiran kritisnya untuk mengkaji fenomena yang terjadi di
+          Indonesia beberapa waktu terakhir ini dengan berbagai perspektif
+          keilmuan yang dimiliki.
         </p>
       </div>
     </div>

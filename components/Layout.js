@@ -5,6 +5,7 @@ import Zoom from "@material-ui/core/Zoom";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import Navbar from "./Navbar/Navbar";
+import Footer from "./Footer/Footer";
 
 const theme = createMuiTheme({
   palette: {
@@ -44,6 +45,7 @@ const Layout = (props) => {
           </Fab>
         </a>
       </Zoom>
+      <Footer />
     </ThemeProvider>
   );
 };

@@ -1,172 +1,172 @@
 .ig {
-	border: 1px solid $white;
-	overflow-y: auto;
-	overflow-x: hidden;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  border: 1px solid $white;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-	.loading {
-		flex: 1;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		animation: spin 6s linear infinite;
-	}
+  .loading {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 6s linear infinite;
+  }
 
-	&__profile {
-		padding: 10px;
+  &__profile {
+    padding: 10px;
 
-		&__header {
-			&__username {
-				margin-top: 10px;
-				margin-bottom: 10px;
-				padding-bottom: 10px;
-				text-align: center;
-				font-size: 18px;
-				border-bottom: 1px solid darken($color: $white, $amount: 10%);
-			}
+    &__header {
+      &__username {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        border-bottom: 1px solid darken($color: $white, $amount: 10%);
+      }
 
-			&__content {
-				display: flex;
-				align-items: center;
+      &__content {
+        display: flex;
+        align-items: center;
 
-				&__image {
-					margin: 4px;
-					flex-basis: 112px;
-					border: 1px solid $black;
-					border-radius: 50%;
-					min-width: 94px;
-					min-height: 94px;
-					max-height: 94px;
-					max-width: 94px;
+        @media screen and (max-width: 320px) {
+          justify-content: center;
+          flex-wrap: wrap;
+        }
 
-					img {
-						min-width: 94px;
-						min-height: 94px;
-						max-height: 94px;
-						max-width: 94px;
-						clip-path: circle(50% at 50% 50%);
-						background-size: cover;
-						background-repeat: no-repeat;
-					}
+        &__image {
+          margin: 4px;
+          flex-basis: 112px;
+          border: 1px solid $black;
+          border-radius: 50%;
+          min-width: 94px;
+          min-height: 94px;
+          max-height: 94px;
+          max-width: 94px;
 
-					i {
-						position: relative;
-						transform: translate(75px, -30px);
-						border: 1px solid $white;
-						background: $blue;
-						border-radius: 50%;
-						color: $white;
-						font-size: 20px;
-						padding: 2px;
-					}
-				}
+          img {
+            min-width: 94px;
+            min-height: 94px;
+            max-height: 94px;
+            max-width: 94px;
+            clip-path: circle(50% at 50% 50%);
+            background-repeat: no-repeat;
+          }
 
-				&__right {
-					width: 100%;
+          i {
+            position: relative;
+            transform: translate(75px, -30px);
+            border: 1px solid $white;
+            background: $blue;
+            border-radius: 50%;
+            color: $white;
+            padding: 2px;
+          }
+        }
 
-					&__prestige {
-						flex: 1;
-						display: flex;
-						align-items: center;
-						justify-content: space-evenly;
+        &__right {
+          width: 100%;
 
-						div {
-							display: flex;
-							flex-direction: column;
-							align-items: center;
-							justify-content: center;
-							margin: 5px;
+          &__prestige {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
 
-							.numbers {
-								font-weight: bold;
-							}
-						}
-					}
+            div {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              margin: 5px;
 
-					&__goto {
-						display: flex;
-						align-items: center;
-						padding: 10px 10%;
+              .numbers {
+                font-weight: bold;
+              }
+            }
+          }
 
-						a {
-							width: 100%;
-							height: 100%;
-						}
+          &__goto {
+            display: flex;
+            align-items: center;
+            padding: 10px 10%;
 
-						button {
-							width: inherit;
-							height: inherit;
-							background: lighten($color: $blue, $amount: 0.8);
-							color: $white;
-							font-weight: bold;
-							border: 0;
-							outline: none;
-							border-radius: 5px;
-							padding: 5px 10px;
-							text-transform: none;
-							cursor: pointer;
+            a {
+              width: 100%;
+              height: 100%;
+            }
 
-							&:hover {
-								background: $black;
-							}
-						}
-					}
-				}
-			}
-		}
+            button {
+              width: inherit;
+              height: inherit;
+              background: lighten($color: $blue, $amount: 0.8);
+              color: $white;
+              font-weight: bold;
+              border: 0;
+              outline: none;
+              border-radius: 5px;
+              padding: 5px 10px;
+              text-transform: none;
+              cursor: pointer;
 
-		&__description {
-			margin-top: 10px;
-			line-height: 1.75;
+              &:hover {
+                background: $black;
+              }
+            }
+          }
+        }
+      }
+    }
 
-			&__nickname {
-				font-weight: bold;
-				font-size: 1rem;
-			}
+    &__description {
+      margin-top: 10px;
+      line-height: 1.75;
 
-			&__bio {
-				line-height: 1.5;
-				white-space: pre-wrap;
-				font-size: 0.95rem;
-			}
+      &__nickname {
+        font-weight: bold;
+      }
 
-			&__web {
-				color: $blue;
-				font-weight: bold;
-				cursor: pointer;
-			}
-		}
-	}
+      &__bio {
+        line-height: 1.5;
+        white-space: pre-wrap;
+      }
 
-	&__timeline {
-		display: flex;
-		flex-direction: column;
+      &__web {
+        color: $blue;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
 
-		&__container {
-			display: grid;
-			grid-template-columns: repeat(3, 33.33%);
+  &__timeline {
+    display: flex;
+    flex-direction: column;
 
-			&__square {
-				background: $red;
-				margin: 1px;
-				clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(3, 33.33%);
 
-				img {
-					height: 100%;
-					width: 100%;
-				}
-			}
-		}
-	}
+      &__square {
+        background: $red;
+        margin: 1px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 @keyframes spin {
-	from {
-		transform: rotate(0);
-	}
-	to {
-		transform: rotate(-360deg);
-	}
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }

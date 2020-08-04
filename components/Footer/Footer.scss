@@ -1,0 +1,98 @@
+.footer {
+  background: $primary;
+
+  &__top {
+    margin-bottom: -10px;
+
+    img {
+      min-width: 100vw;
+      max-width: 100vw;
+    }
+  }
+
+  &__content {
+    background: $light-orange;
+    padding: 5% 10%;
+    display: flex;
+    flex-direction: column;
+
+    &__bottom {
+      margin-top: 1rem;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__logoContainer {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    color: $white;
+  }
+
+  &__logo {
+    height: 32px;
+    width: 32px;
+    padding: 5px;
+    background: $white;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
+  &__sponsor,
+  &__mediaPartner,
+  &__contact__socialMedia,
+  &__contact__email {
+    &__title {
+      font-weight: bold;
+      color: $secondary;
+    }
+  }
+
+  &__sponsor {
+    flex: 1;
+    &__logos {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__mediaPartner {
+    flex: 1;
+    &__logos {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__contact {
+    flex: 1;
+
+    &__email {
+      margin-top: 2rem;
+      &__text {
+        color: $white;
+        margin-top: 5px;
+      }
+    }
+
+    &__socialMedia {
+      &__logos {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: 10px;
+    padding-top: 10px;
+    color: $secondary;
+    border-top: 1px solid rgba($color: $white, $alpha: 0.2);
+
+    &__kmmb {
+      font-weight: bold;
+    }
+  }
+}
