@@ -6,6 +6,8 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
+import RegisterLoginBase from "./Register/RegisterLoginBase";
+import { useState } from "react";
 
 const theme = createMuiTheme({
   palette: {
@@ -18,6 +20,15 @@ const theme = createMuiTheme({
   },
 });
 
+const childComponent = (data, children) => {
+  switch (data) {
+    case "Register":
+      return <RegisterLoginBase />;
+    default:
+      return children;
+  }
+};
+
 const Layout = (props) => {
   const { children, window } = props;
   const trigger = useScrollTrigger({
@@ -25,12 +36,13 @@ const Layout = (props) => {
     disableHysteresis: true,
     threshold: 100,
   });
+  const [childRender, setChildRender] = useState("Register");
 
   return (
     <ThemeProvider theme={theme}>
       <Navbar />
       <span id="back-to-top-anchor"></span>
-      {children}
+      {childComponent(childRender, children)}
       <Zoom in={trigger}>
         <a
           href="#back-to-top-anchor"

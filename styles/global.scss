@@ -112,8 +112,18 @@ button {
   &.secondary {
     background: $white;
     color: $secondary;
+
     &:hover {
       background: darken($color: $white, $amount: 5%);
+    }
+  }
+
+  &.blue {
+    background: $blue;
+    color: $white;
+
+    &:hover {
+      background: darken($color: $blue, $amount: 5%);
     }
   }
 }
