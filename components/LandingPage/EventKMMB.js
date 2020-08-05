@@ -1,3 +1,4 @@
+import CloudVector from "../Vector/CloudVector";
 import Paper from "@material-ui/core/Paper";
 import "../../styles/Card.scss";
 
@@ -22,6 +23,7 @@ const EventKMMB = () => {
 
   return (
     <div id="eventLandingPage" className="eventKMMB">
+      <CloudVector />
       <h2 className="eventKMMB__title">Ada apa aja di KMMB 2020?</h2>
       <div className="eventKMMB__cards">
         {event.map((data, index) => (

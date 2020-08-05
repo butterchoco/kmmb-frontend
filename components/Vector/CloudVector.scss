@@ -1,0 +1,51 @@
+.cloud {
+  width: 100%;
+  position: absolute;
+  transform: translateY(20vh);
+  overflow-x: hidden;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+
+  &--left {
+    flex: 1;
+    max-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transform: rotateY(180deg);
+    margin-left: -20vw;
+  }
+
+  &--right {
+    flex: 1;
+    max-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: -20vw;
+  }
+
+  &__1 {
+    position: relative;
+    z-index: 2;
+  }
+  &__2 {
+    position: relative;
+    z-index: 1;
+    top: -16rem;
+
+    @media screen and (max-width: 425px) {
+      top: -20rem;
+    }
+  }
+  &__3 {
+    position: relative;
+    z-index: 0;
+    top: -24rem;
+
+    @media screen and (max-width: 425px) {
+      top: -30rem;
+    }
+  }
+}
