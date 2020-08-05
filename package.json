@@ -4,7 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "next"
+    "dev": "next",
+    "build": "next build",
+    "export": "next export",
+    "deploy": "firebase deploy --only hosting:kmmb-website"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
