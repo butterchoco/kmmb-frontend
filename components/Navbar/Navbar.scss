@@ -3,6 +3,11 @@
   padding: 0.5rem 1rem;
   border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
 
+  &--mobile {
+    z-index: 0 !important;
+    margin-top: 5.6vh;
+  }
+
   &__left {
     flex: 1;
     display: flex;
@@ -15,5 +20,39 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+  }
+
+  &__daftar {
+    &--mobile {
+      margin: 1rem 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    margin-right: 1rem;
+
+    &--mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      button {
+        margin: 1rem 0;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__more {
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+      padding: 5px;
+    }
   }
 }

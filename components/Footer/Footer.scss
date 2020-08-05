@@ -79,8 +79,23 @@
 
     &__socialMedia {
       &__logos {
+        margin-top: 10px;
         display: flex;
         flex-wrap: wrap;
+        height: 34px;
+
+        a {
+          margin-right: 20px;
+
+          &:hover img {
+            height: 24px;
+          }
+        }
+
+        img {
+          height: 20px;
+          transition: all 0.2s ease;
+        }
       }
     }
   }

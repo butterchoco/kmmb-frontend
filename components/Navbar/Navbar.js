@@ -8,47 +8,96 @@ import Slide from "@material-ui/core/Slide";
 import Link from "next/link";
 import "./Navbar.scss";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
-const Navbar = ({ children, window }) => {
-	const router = useRouter();
-	const links = [
-		{ name: "Tentang Kami", to: "#aboutLandingPage" },
-		{ name: "Acara", to: "#eventLandingPage" },
-		{ name: "Timeline", to: "#timelineLandingPage" },
-	];
-	const trigger = useScrollTrigger({ target: window ? window() : undefined });
+const Navbar = () => {
+  const router = useRouter();
+  const links = [
+    { name: "Tentang Kami", to: "#aboutLandingPage" },
+    { name: "Acara", to: "#eventLandingPage" },
+    { name: "Timeline", to: "#timelineLandingPage" },
+  ];
+  const [mobileNavShow, setMobileNavShow] = useState(false);
 
-	return (
-		<Slide appear={false} direction="down" in={!trigger}>
-			<AppBar position="sticky" elevation={0} color="inherit">
-				<Toolbar id="back-to-top-anchor">
-					<Typography>
-						<img
-							style={{ height: "42px" }}
-							src="/images/logo_KMMB.png"
-							alt="logo_KMMB"
-						/>
-					</Typography>
-					<Typography
-						style={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}
-					>
-						{links.map((data, index) => (
-							<Link href={data.to} key={index}>
-								<button
-									className={
-										router.pathname == data.to ? "basic secondary" : "basic"
-									}
-								>
-									{data.name}
-								</button>
-							</Link>
-						))}
-						<button className="primary">Login</button>
-					</Typography>
-				</Toolbar>
-			</AppBar>
-		</Slide>
-	);
+  return (
+    <div>
+      <AppBar elevation={0} color="inherit">
+        <Toolbar>
+          <Typography>
+            <img
+              style={{ height: "42px" }}
+              src="/images/logo_KMMB.png"
+              alt="logo_KMMB"
+            />
+          </Typography>
+          <div
+            style={{
+              flexGrow: 1,
+              display: "flex",
+              justifyContent: "flex-end",
+            }}
+          >
+            <div className="navbar__link">
+              {links.map((data, index) => (
+                <Link href={data.to} key={index}>
+                  <button
+                    className={
+                      router.pathname == data.to ? "basic secondary" : "basic"
+                    }
+                  >
+                    {data.name}
+                  </button>
+                </Link>
+              ))}
+            </div>
+            <button className="navbar__daftar primary">Daftar</button>
+            <button
+              className="navbar__more basic"
+              onClick={() => setMobileNavShow(!mobileNavShow)}
+            >
+              {mobileNavShow ? (
+                <span className="material-icons">close</span>
+              ) : (
+                <span className="material-icons">dehaze</span>
+              )}
+            </button>
+          </div>
+        </Toolbar>
+      </AppBar>
+      <Slide
+        className="navbar--mobile"
+        appear={false}
+        direction="down"
+        in={mobileNavShow}
+      >
+        <AppBar elevation={0} color="inherit">
+          <Toolbar>
+            <div
+              style={{
+                flexGrow: 1,
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <div className="navbar__link--mobile">
+                {links.map((data, index) => (
+                  <Link href={data.to} key={index}>
+                    <button
+                      className={
+                        router.pathname == data.to ? "basic secondary" : "basic"
+                      }
+                    >
+                      {data.name}
+                    </button>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </Toolbar>
+        </AppBar>
+      </Slide>
+    </div>
+  );
 };
 
 export default Navbar;

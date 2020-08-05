@@ -1,4 +1,5 @@
 import "./Footer.scss";
+import { Link } from "@material-ui/core";
 
 const Footer = () => {
   return (
@@ -25,7 +26,32 @@ const Footer = () => {
               <p className="footer__contact__socialMedia__title">
                 Sosial Media
               </p>
-              <div className="footer__contact__socialMedia__logos"></div>
+              <div className="footer__contact__socialMedia__logos">
+                <Link
+                  className="footer__contact__socialMedia__logos__facebook"
+                  href=""
+                >
+                  <img src="/images/facebook.png" />
+                </Link>
+                <Link
+                  className="footer__contact__socialMedia__logos__youtube"
+                  href=""
+                >
+                  <img src="/images/youtube.png" />
+                </Link>
+                <Link
+                  className="footer__contact__socialMedia__logos__instagram"
+                  href="https://instagram.com/mahasiswamerdekabelajar"
+                >
+                  <img src="/images/instagram.png" />
+                </Link>
+                <Link
+                  className="footer__contact__socialMedia__logos__line"
+                  href=""
+                >
+                  <img src="/images/line.png" />
+                </Link>
+              </div>
             </div>
             <div className="footer__contact__email">
               <p className="footer__contact__email__title">Kontak kami di</p>
