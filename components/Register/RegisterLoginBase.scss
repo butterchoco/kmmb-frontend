@@ -1,21 +1,15 @@
 .registerLoginBase {
-  background: $white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 90vh;
-  padding: 0 20vw;
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+	background: $white;
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	z-index: 9999;
+	padding: 5vh 0;
 
-  &__close {
-    align-self: flex-end;
-    padding: 5px;
-    cursor: pointer;
-  }
+	&__close {
+		margin-left: auto;
+		margin-right: 5vw;
+		padding: 5px;
+		cursor: pointer;
+	}
 }
