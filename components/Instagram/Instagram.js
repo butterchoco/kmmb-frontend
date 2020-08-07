@@ -102,7 +102,7 @@ const Instagram = ({ username }) => {
 			<div className="ig__timeline">
 				<div className="ig__timeline__buttons"></div>
 				<div className="ig__timeline__container">
-					{profile.timeline != undefined
+					{profile.timeline !== undefined
 						? profile.timeline.feeds.map((data, index) => (
 								<div className="ig__timeline__container__square" key={index}>
 									<img src={data.node.display_url} alt={"feed " + index} />

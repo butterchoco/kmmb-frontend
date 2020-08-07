@@ -11,16 +11,16 @@ import "../styles/LandingPage.scss";
 import { useState } from "react";
 import RegisterLoginBase from "../components/RegisterLoginBase";
 
-const Index = () => {
+const Index = (props) => {
   const [registerShow, setRegisterShow] = useState(false);
 
   return (
-    <Layout>
+    <Layout {...props}>
       {registerShow ? (
         <RegisterLoginBase setRegisterShow={setRegisterShow} />
       ) : (
         <div>
-          <HeroHeader setRegisterShow={setRegisterShow} />
+          <HeroHeader registerShow={registerShow} setRegisterShow={setRegisterShow} />
           <AboutKMMB />
           <BackgroundKMMB />
           <TaglineKMMB />

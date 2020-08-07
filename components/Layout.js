@@ -6,8 +6,10 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import RegisterLoginBase from "./RegisterLoginBase";
+import { db, auth } from "./firebase/config";
+import Alert from "./Alert";
 
 const theme = createMuiTheme({
   palette: {
@@ -21,19 +23,40 @@ const theme = createMuiTheme({
 });
 
 const Layout = (props) => {
-  const { children, window } = props;
   const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
+    target: props.window ? window() : undefined,
     disableHysteresis: true,
     threshold: 100,
   });
   const [registerShow, setRegisterShow] = useState(false);
+  const [successAlertMessage, setSuccessAlertMessage] = useState("");
+  const [errorAlertMessage, setErrorAlertMessage] = useState("");
+
+  console.log(errorAlertMessage);
 
   return (
     <ThemeProvider theme={theme}>
-      <Navbar setRegisterShow={setRegisterShow} />
+      <Navbar setRegisterShow={setRegisterShow} {...props} />
       <span id="back-to-top-anchor"></span>
-      {registerShow ? <RegisterLoginBase setRegisterShow={setRegisterShow} /> : children}
+      {registerShow ? (
+        <RegisterLoginBase setRegisterShow={setRegisterShow} />
+      ) : (
+        props.children
+      )}
+      {successAlertMessage !== "" ? (
+        <Alert
+          variant="success"
+          message={successAlertMessage}
+          setMessage={setSuccessAlertMessage}
+        />
+      ) : null}
+      {errorAlertMessage !== "" ? (
+        <Alert
+          variant="error"
+          message={errorAlertMessage}
+          setMessage={setErrorAlertMessage}
+        />
+      ) : null}
       <Zoom in={trigger}>
         <a
           href="#back-to-top-anchor"

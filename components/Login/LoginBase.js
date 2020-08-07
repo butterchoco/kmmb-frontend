@@ -87,6 +87,7 @@ const LoginBase = ({ setIsRegisterComponent, setRegisterShow }) => {
             "Akun belum terdaftar. Silahkan lakukan registrasi terlebih dahulu !"
           );
           setIsLoading(false);
+          user.delete();
           auth.signOut();
         }
       })
@@ -98,6 +99,7 @@ const LoginBase = ({ setIsRegisterComponent, setRegisterShow }) => {
   };
 
   const googleAuth = () => {
+    setIsLoading(true);
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope("profile");
     provider.addScope("email");

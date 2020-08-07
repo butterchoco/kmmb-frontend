@@ -12,37 +12,24 @@ import { useState, useEffect } from "react";
 import { auth } from "../firebase/config";
 import { Paper } from "@material-ui/core";
 
-const Navbar = ({ setRegisterShow }) => {
+const Navbar = (props) => {
+  const {
+    setRegisterShow,
+    user,
+    setUser,
+    userLoggedIn,
+    setUserLoggedIn,
+  } = props;
   const router = useRouter();
   const links = [
     { name: "Tentang Kami", to: "#aboutLandingPage" },
     { name: "Acara", to: "#eventLandingPage" },
   ];
   const [mobileNavShow, setMobileNavShow] = useState(false);
-  const [user, setUser] = useState({});
-  const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [profileNavShow, setProfileNavShow] = useState(false);
 
   useEffect(() => {
-    auth.onAuthStateChanged((userLog) => {
-      if (userLog) {
-        setUser(userLog);
-        setUserLoggedIn(true);
-      } else {
-        setUser({});
-        setUserLoggedIn(false);
-      }
-    });
-
-    return function cleanUp() {
-      setMobileNavShow(false);
-      setUser({});
-      setUserLoggedIn(false);
-      setProfileNavShow(false);
-    };
-  }, []);
-
-  useEffect(() => {
+    setMobileNavShow(false);
     setProfileNavShow(false);
   }, [userLoggedIn]);
 

@@ -1,7 +1,11 @@
 import "./Footer.scss";
 import { Link } from "@material-ui/core";
+import { useState } from "react";
 
 const Footer = () => {
+  const [mediaPartner, setMediaPartner] = useState([]);
+  const [sponsor, setSponsor] = useState([]);
+
   return (
     <div className="footer">
       <div className="footer__top">
@@ -15,12 +19,16 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer__content__bottom">
-          <div className="footer__sponsor">
-            <p className="footer__sponsor__title">Disponsori Oleh</p>
-          </div>
-          <div className="footer__mediaPartner">
-            <p className="footer__mediaPartner__title">Media Partner</p>
-          </div>
+          {sponsor.length !== 0 ? (
+            <div className="footer__sponsor">
+              <p className="footer__sponsor__title">Disponsori Oleh</p>
+            </div>
+          ) : null}
+          {mediaPartner.length !== 0 ? (
+            <div className="footer__mediaPartner">
+              <p className="footer__mediaPartner__title">Media Partner</p>
+            </div>
+          ) : null}
           <div className="footer__contact">
             <div className="footer__contact__socialMedia">
               <p className="footer__contact__socialMedia__title">

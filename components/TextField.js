@@ -31,19 +31,6 @@ const BootstrapInput = withStyles((theme) => ({
 		width: "100%",
 		padding: "10px 12px",
 		transition: theme.transitions.create(["border-color", "box-shadow"]),
-		// Use the system font instead of the default Roboto font.
-		fontFamily: [
-			"-apple-system",
-			"BlinkMacSystemFont",
-			'"Segoe UI"',
-			"Roboto",
-			'"Helvetica Neue"',
-			"Arial",
-			"sans-serif",
-			'"Apple Color Emoji"',
-			'"Segoe UI Emoji"',
-			'"Segoe UI Symbol"',
-		].join(","),
 		"&:focus": {
 			boxShadow: `${fade(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
 			borderColor: theme.palette.primary.main,
@@ -71,19 +58,15 @@ const TextField = ({
 	const [tooltipShow, setTooltipShow] = useState(false);
 
 	return (
-		<FormControl className={className + " textField"} style={{ width: "100%" }}>
+		<FormControl className={className !== undefined ? className + " formField": "formField"}>
 			{tooltipShow ? (
-				<Paper className="textField__tooltip">
+				<Paper className="formField__tooltip">
 					{tooltip.split("\\n").map((item, i) => (
 						<p key={i}>{item}</p>
 					))}
 				</Paper>
 			) : null}
-			<InputLabel
-				shrink
-				htmlFor="bootstrap-input"
-				style={{ fontWeight: "bold", color: "#ff7614" }}
-			>
+			<InputLabel shrink htmlFor="bootstrap-input">
 				{label}
 				{tooltip !== undefined && tooltip !== "" ? (
 					<span

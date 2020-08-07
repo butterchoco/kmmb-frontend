@@ -150,9 +150,16 @@ const RegisterAccount = ({
       .get()
       .then((snap) => {
         if (snap.exists) {
-          setErrorAlertMessage("Akun sudah terdaftar. Silahkan lakukan login!");
-          setIsLoading(false);
-          auth.signOut();
+          const userData = snap.data();
+          if (userData.ketua !== null) {
+            setErrorAlertMessage(
+              "Akun sudah terdaftar. Silahkan lakukan login!"
+            );
+            setIsLoading(false);
+            auth.signOut();
+          } else {
+            createUserDocument(user);
+          }
         } else {
           createUserDocument(user);
         }
@@ -165,20 +172,6 @@ const RegisterAccount = ({
   };
 
   const createUserDocument = (user) => {
-    const INITIAL_USERDATA = {
-      alamat: "",
-      angkatan: "",
-      email: "",
-      fakultas: "",
-      institusi: "",
-      jenis_kelamin: "",
-      nama_lengkap: "",
-      nomor_telepon: "",
-      pas_foto: "",
-      program_studi: "",
-      surat_keterangan_mahasiswa_aktif: "",
-    };
-
     db.collection("user")
       .doc(user.uid)
       .set({
@@ -187,9 +180,9 @@ const RegisterAccount = ({
         link_video: "",
         verifikasi_link_proposal: "",
         verifikasi_pembayaran: "",
-        ketua: INITIAL_USERDATA,
-        anggota_1: INITIAL_USERDATA,
-        anggota_2: INITIAL_USERDATA,
+        ketua: null,
+        anggota_1: null,
+        anggota_2: null,
       })
       .then(() => {
         setIsLoading(false);
