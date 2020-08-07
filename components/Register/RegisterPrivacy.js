@@ -4,9 +4,10 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { DropzoneArea } from "material-ui-dropzone";
 import "../../styles/Form.scss";
-import "./RegisterPrivacy.scss";
+import "./RegisterAccordion.scss";
 import { useState } from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
+import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) =>
 	createStyles({
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) =>
 	})
 );
 
-const RegisterPrivacy = () => {
+const RegisterPrivacy = ({ nextStep }) => {
 	const classes = useStyles();
 	const RegisterBioPanel = ["Ketua", "Anggota 1", "Anggota 2"];
 	const [ActiveRegisterBioPanel, setActiveRegisterBioPanel] = useState("Ketua");
@@ -27,20 +28,20 @@ const RegisterPrivacy = () => {
 	};
 
 	const handleDropdownChange = (files) => {
-		console.log(files);
+		console.log("files");
 	};
 
 	const isFullfilledForm = (data) => {
 		return (
-			<div className="registerPrivacy__formDescription--success">
+			<div className="registerAccordion__formDescription--success">
 				<span className="material-icons">check_circle</span>
 			</div>
 		);
 	};
 
 	return (
-		<div className="registerPrivacy">
-			<div className="registerPrivacy__accordion">
+		<div className="registerAccordion">
+			<div className="registerAccordion__accordion">
 				{RegisterBioPanel.map((data, index) => (
 					<Accordion
 						expanded={data == ActiveRegisterBioPanel}
@@ -48,8 +49,8 @@ const RegisterPrivacy = () => {
 						onChange={accordionChange(data)}
 					>
 						<AccordionSummary expandIcon={<ExpandMoreIcon />}>
-							<div className="registerPrivacy__formDescription">
-								<h4>Biodata {data}</h4>
+							<div className="registerAccordion__formDescription">
+								<h4 className="registerAccordion__formDescription__title">Biodata {data} </h4>
 								{isFullfilledForm(data)}
 							</div>
 						</AccordionSummary>
@@ -94,7 +95,14 @@ const RegisterPrivacy = () => {
 					</Accordion>
 				))}
 			</div>
-			<button className="primary registerPrivacy__submit">Lanjut</button>
+			<Button
+				color="secondary"
+				variant="contained"
+				className="registerAccordion__submit"
+				onClick={nextStep}
+			>
+				Lanjut
+			</Button>
 		</div>
 	);
 };

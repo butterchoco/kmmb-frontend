@@ -3,26 +3,31 @@ import { useState } from "react";
 import RegisterAccount from "./RegisterAccount";
 import RegisterPrivacy from "./RegisterPrivacy";
 import RegisterEducation from "./RegisterEducation";
-import "./Register.scss";
 
-const getRegisterComponent = (data) => {
+const getRegisterComponent = (data, nextStep) => {
 	switch (data) {
 		case 0:
-			return <RegisterAccount />;
+			return <RegisterAccount nextStep={nextStep}/>;
 		case 1:
-			return <RegisterPrivacy />;
+			return <RegisterPrivacy nextStep={nextStep} />;
+		case 2:
+			return <RegisterEducation />;
 		default:
 			return <div>Loading...</div>;
 	}
 };
 
 const Register = () => {
-	const [activeStep, setActiveStep] = useState(1);
+	const [activeStep, setActiveStep] = useState(0);
+
+	const nextStep = () => {
+		setActiveStep((step) => step + 1);
+	};
 
 	return (
-		<div className="register">
+		<div>
 			<RegisterStepper activeStep={activeStep} />
-			{getRegisterComponent(activeStep)}
+			{getRegisterComponent(activeStep, nextStep)}
 		</div>
 	);
 };

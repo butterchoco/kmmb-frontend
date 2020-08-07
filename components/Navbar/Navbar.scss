@@ -1,58 +1,92 @@
 .navbar {
-  display: flex;
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+	display: flex;
+	padding: 0.5rem 1rem;
+	border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
 
-  &--mobile {
-    z-index: 0 !important;
-    margin-top: 5.6vh;
-  }
+	&--mobile {
+		z-index: 0 !important;
+		margin-top: 8vh;
+		display: flex;
 
-  &__left {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
+		@media screen and (min-width: 769px) {
+			display: none !important;
+		}
+	}
 
-  &__right {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
+	&__left {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
 
-  &__daftar {
-    &--mobile {
-      margin: 1rem 0;
-    }
-  }
+	&__right {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
 
-  &__link {
-    display: flex;
-    margin-right: 1rem;
+	&__daftar {
+		&--mobile {
+			margin: 1rem 0;
+		}
+	}
 
-    &--mobile {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+	&__profileButton {
+		align-items: flex-end;
+		font-size: 14px;
 
-      button {
-        margin: 1rem 0;
-      }
-    }
+		span {
+			margin-right: 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
 
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
-  }
+	&__profileNav {
+		position: absolute;
+		transform: translate(0, 45px);
 
-  &__more {
-    display: none;
+		&__item {
+			padding: 0.5rem 4rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
 
-    @media screen and (max-width: 768px) {
-      display: flex;
-      padding: 5px;
-    }
-  }
+			&:hover {
+				background: rgba($color: $black, $alpha: 0.1);
+			}
+		}
+	}
+
+	&__link {
+		display: flex;
+		margin-right: 1rem;
+
+		&--mobile {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+
+			button {
+				margin: 5px 0;
+			}
+		}
+
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
+	}
+
+	&__more {
+		display: none;
+
+		@media screen and (max-width: 768px) {
+			display: flex;
+			padding: 5px;
+		}
+	}
 }

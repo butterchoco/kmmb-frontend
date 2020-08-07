@@ -1,27 +1,30 @@
-.form {
+.textField {
 	width: 100%;
-}
+	margin-top: 1rem !important;
 
-.input-group {
-	display: flex;
-	flex-direction: column;
-	margin: 20px 0;
-	width: inherit;
-}
-
-label {
-	font-weight: bold;
-	color: $primary;
-
-	& + input {
-		margin-top: 10px;
+	label {
+		display: flex;
+		align-items: center;
+		span {
+			margin-left: 5px;
+			cursor: pointer;
+		}
 	}
-}
 
-input {
-	padding: 10px;
-	border-radius: 5px;
-	border: 1px solid lighten($black, 50%);
+	&__tooltip {
+		position: absolute;
+		top: 25px;
+		z-index: 1000;
+		padding: 10px;
+		width: auto;
+		white-space: pre-wrap;
+		background: $black !important;
+		color: $white !important;
+
+		p {
+			font-size: 12px;
+		}
+	}
 }
 
 .MuiDropzoneArea {
@@ -37,6 +40,10 @@ input {
 		flex-direction: row-reverse;
 		align-items: center;
 		justify-content: center;
+
+		@media screen and (max-width: 1024px) {
+			flex-direction: column-reverse;
+		}
 
 		svg {
 			max-height: 32px;
