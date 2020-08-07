@@ -19,7 +19,7 @@ const BootstrapInput = withStyles((theme) => ({
 			paddingRight: theme.spacing(5),
 		},
 		"&.error input": {
-			borderColor: "#e84a5f",
+			border: "2px solid #e84a5f",
 		},
 	},
 	input: {
@@ -61,6 +61,11 @@ const TextField = ({
 	tooltip,
 	type,
 	className,
+	name,
+	disabled,
+	placeholder,
+	autoComplete,
+	autoFocus
 }) => {
 	const [typePassword, setTypePassword] = useState(false);
 	const [tooltipShow, setTooltipShow] = useState(false);
@@ -92,16 +97,26 @@ const TextField = ({
 			</InputLabel>
 			{type !== "password" ? (
 				<BootstrapInput
+					name={name}
 					defaultValue={defaultValue}
 					className={error !== undefined && error !== "" ? "error" : ""}
 					type={type}
 					value={value}
 					onChange={onChange}
+					disabled={disabled}
 					aria-describedby="component-text"
+					placeholder={placeholder}
+					autoComplete={autoComplete}
+					autoFocus={autoFocus}
 				/>
 			) : (
 				<BootstrapInput
 					defaultValue={defaultValue}
+					name={name}
+					placeholder={placeholder}
+					autoComplete={autoComplete}
+					autoFocus={autoFocus}
+					disabled={disabled}
 					className={error !== undefined && error !== "" ? "error" : ""}
 					type={typePassword ? "text" : "password"}
 					value={value}

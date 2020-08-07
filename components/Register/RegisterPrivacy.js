@@ -8,6 +8,7 @@ import "./RegisterAccordion.scss";
 import { useState } from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
+import TextField from "../TextField";
 
 const useStyles = makeStyles((theme) =>
 	createStyles({
@@ -56,22 +57,9 @@ const RegisterPrivacy = ({ nextStep }) => {
 						</AccordionSummary>
 						<AccordionDetails>
 							<div className="form">
-								<div className="input-group">
-									<label>Nama Lengkap</label>
-									<input placeholder="Masukan nama lengkap" />
-								</div>
-								<div className="input-group">
-									<label>Jenis Kelamin</label>
-									<input placeholder="Masukan nama lengkap" />
-								</div>
-								<div className="input-group">
-									<label>Alamat</label>
-									<input placeholder="Masukan tempat tinggal anda saat ini" />
-								</div>
-								<div className="input-group">
-									<label>Nomor Telepon</label>
-									<input placeholder="Masukan nomor telepon aktif" />
-								</div>
+								<TextField label="Nama Lengkap"/>
+								<TextField label="Alamat"/>
+								<TextField label="Nomor Telepon"/>
 								<div className="input-group">
 									<DropzoneArea
 										onChange={handleDropdownChange}

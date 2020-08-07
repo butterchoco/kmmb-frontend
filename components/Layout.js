@@ -6,32 +6,8 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
-import RegisterBase from "./Register/RegisterBase";
-import LoginBase from "./Login/LoginBase";
 import { useState } from "react";
-
-const Register = ({ setRegisterShow }) => {
-  const [isRegisterComponent, setIsRegisterComponent] = useState(true);
-
-  return (
-    <div className="fullscreenModal">
-      <button
-        className="basic fullscreenModal__close"
-        onClick={() => setRegisterShow(false)}
-      >
-        <span className="material-icons">close</span>
-      </button>
-      <h2 className="fullscreenModal__title">Daftar KMMB 2020</h2>
-      <div className="fullscreenModal__content">
-        {isRegisterComponent ? (
-          <RegisterBase setIsRegisterComponent={setIsRegisterComponent} />
-        ) : (
-          <LoginBase setIsRegisterComponent={setIsRegisterComponent} />
-        )}
-      </div>
-    </div>
-  );
-};
+import RegisterLoginBase from "./RegisterLoginBase";
 
 const theme = createMuiTheme({
   palette: {
@@ -57,7 +33,7 @@ const Layout = (props) => {
     <ThemeProvider theme={theme}>
       <Navbar setRegisterShow={setRegisterShow} />
       <span id="back-to-top-anchor"></span>
-      {registerShow ? <Register setRegisterShow={setRegisterShow} /> : children}
+      {registerShow ? <RegisterLoginBase setRegisterShow={setRegisterShow} /> : children}
       <Zoom in={trigger}>
         <a
           href="#back-to-top-anchor"

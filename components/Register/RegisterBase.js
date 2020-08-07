@@ -3,33 +3,91 @@ import { useState } from "react";
 import RegisterAccount from "./RegisterAccount";
 import RegisterPrivacy from "./RegisterPrivacy";
 import RegisterEducation from "./RegisterEducation";
+import Alert from "../Alert";
 
-const getRegisterComponent = (activeStep, nextStep, setIsRegisterComponent) => {
-	switch (activeStep) {
-		case 0:
-			return <RegisterAccount nextStep={nextStep} setIsRegisterComponent={setIsRegisterComponent}/>;
-		case 1:
-			return <RegisterPrivacy nextStep={nextStep} />;
-		case 2:
-			return <RegisterEducation />;
-		default:
-			return <div>Loading...</div>;
-	}
+const getRegisterComponent = (
+  activeStep,
+  nextStep,
+  setIsRegisterComponent,
+  setDisabledClose,
+  setRegisterShow,
+  setSuccessAlertMessage,
+  setErrorAlertMessage
+) => {
+  switch (activeStep) {
+    case 0:
+      return (
+        <RegisterAccount
+          nextStep={nextStep}
+          setRegisterShow={setRegisterShow}
+          setIsRegisterComponent={setIsRegisterComponent}
+          setDisabledClose={setDisabledClose}
+          setSuccessAlertMessage={setSuccessAlertMessage}
+          setErrorAlertMessage={setErrorAlertMessage}
+        />
+      );
+    case 1:
+      return (
+        <RegisterPrivacy
+          nextStep={nextStep}
+          setSuccessAlertMessage={setSuccessAlertMessage}
+          setErrorAlertMessage={setErrorAlertMessage}
+        />
+      );
+    case 2:
+      return (
+        <RegisterEducation
+          setRegisterShow={setRegisterShow}
+          setSuccessAlertMessage={setSuccessAlertMessage}
+          setErrorAlertMessage={setErrorAlertMessage}
+        />
+      );
+    default:
+      return <div>Loading...</div>;
+  }
 };
 
-const Register = ({ setIsRegisterComponent }) => {
-	const [activeStep, setActiveStep] = useState(0);
+const Register = ({
+  setIsRegisterComponent,
+  setDisabledClose,
+  setRegisterShow,
+}) => {
+  const [activeStep, setActiveStep] = useState(0);
+  const [successAlertMessage, setSuccessAlertMessage] = useState("");
+  const [errorAlertMessage, setErrorAlertMessage] = useState("");
 
-	const nextStep = () => {
-		setActiveStep((step) => step + 1);
-	};
+  const nextStep = () => {
+    setActiveStep((step) => step + 1);
+  };
 
-	return (
-		<div>
-			<RegisterStepper activeStep={activeStep} />
-			{getRegisterComponent(activeStep, nextStep, setIsRegisterComponent)}
-		</div>
-	);
+  return (
+    <div>
+      {successAlertMessage !== "" ? (
+        <Alert
+          variant="success"
+          message={successAlertMessage}
+          setMessage={setSuccessAlertMessage}
+        />
+      ) : null}
+      {errorAlertMessage !== "" ? (
+        <Alert
+          variant="error"
+          message={errorAlertMessage}
+          setMessage={setErrorAlertMessage}
+        />
+      ) : null}
+      <RegisterStepper activeStep={activeStep} />
+      {getRegisterComponent(
+        activeStep,
+        nextStep,
+        setIsRegisterComponent,
+        setDisabledClose,
+        setRegisterShow,
+        setSuccessAlertMessage,
+        setErrorAlertMessage
+      )}
+    </div>
+  );
 };
 
 export default Register;

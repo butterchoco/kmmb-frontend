@@ -1,5 +1,5 @@
 import "./Instagram.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Axios from "axios";
 
 const Instagram = ({ username }) => {

@@ -5,8 +5,8 @@
 
 	&--mobile {
 		z-index: 0 !important;
-		margin-top: 8vh;
 		display: flex;
+		padding-top: 4rem;
 
 		@media screen and (min-width: 769px) {
 			display: none !important;

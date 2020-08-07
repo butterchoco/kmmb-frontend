@@ -34,13 +34,17 @@ const Navbar = ({ setRegisterShow }) => {
       }
     });
 
-    return () => {
+    return function cleanUp() {
       setMobileNavShow(false);
       setUser({});
       setUserLoggedIn(false);
       setProfileNavShow(false);
     };
   }, []);
+
+  useEffect(() => {
+    setProfileNavShow(false);
+  }, [userLoggedIn]);
 
   const logout = () => {
     auth.signOut().then(() => {
