@@ -1,7 +1,7 @@
 import CloudVector from "../Vector/CloudVector";
 import Link from "next/link";
 
-const HeroHeader = () => {
+const HeroHeader = ({ setRegisterShow }) => {
   return (
     <div className="heroHeader">
       <CloudVector />
@@ -9,7 +9,7 @@ const HeroHeader = () => {
         <h1 className="heroHeader__title">KMMB 2020</h1>
         <h4 className="heroHeader__tag">#BreakOurBoundaries!</h4>
         <div className="heroHeader__cto">
-          <Link href="/auth/register" replace><button className="primary">Daftar Sekarang</button></Link>
+          <button className="primary" onClick={() => setRegisterShow(true)}>Daftar Sekarang</button>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ import { auth } from "../firebase/config";
 import Alert from "../Alert";
 import router from "next/router";
 
-const LoginBase = () => {
+const LoginBase = ({ setIsRegisterComponent }) => {
 	const [email, setEmail] = useState({
 		value: "",
 		error: "",
@@ -134,9 +134,7 @@ const LoginBase = () => {
 			</Button>
 			<p>
 				Belum punya akun ?{" "}
-				<Link href="/auth/register">
-					<span className="registerLoginBase__nav__login">Daftar</span>
-				</Link>
+				<span className="registerLoginBase__nav__login" onClick={() => setIsRegisterComponent(true)}>Daftar</span>
 			</p>
 		</div>
 	);

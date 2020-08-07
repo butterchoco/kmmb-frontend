@@ -9,6 +9,11 @@ const Instagram = ({ username }) => {
 
 	useEffect(() => {
 		fetchData();
+		return () => {
+			setProfile({});
+			setIsLoading(false);
+			setMsg("");
+		}
 	}, []);
 
 	const fetchData = async () => {

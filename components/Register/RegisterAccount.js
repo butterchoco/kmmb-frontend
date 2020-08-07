@@ -5,7 +5,7 @@ import { Button } from "@material-ui/core";
 import Link from "next/link";
 import LinearProgress from "../Progress";
 
-const RegisterAccount = ({ nextStep }) => {
+const RegisterAccount = ({ nextStep, setIsRegisterComponent }) => {
 	const [email, setEmail] = useState({
 		value: "",
 		error: "",
@@ -193,9 +193,7 @@ const RegisterAccount = ({ nextStep }) => {
 			</Button>
 			<p>
 				Sudah punya akun ?{" "}
-				<Link href="/auth">
-					<span className="registerLoginBase__nav__login">Login</span>
-				</Link>
+				<span className="registerLoginBase__nav__login" onClick={() => setIsRegisterComponent(false)}>Login</span>
 			</p>
 		</div>
 	);

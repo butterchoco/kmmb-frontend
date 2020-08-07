@@ -4,10 +4,10 @@ import RegisterAccount from "./RegisterAccount";
 import RegisterPrivacy from "./RegisterPrivacy";
 import RegisterEducation from "./RegisterEducation";
 
-const getRegisterComponent = (data, nextStep) => {
-	switch (data) {
+const getRegisterComponent = (activeStep, nextStep, setIsRegisterComponent) => {
+	switch (activeStep) {
 		case 0:
-			return <RegisterAccount nextStep={nextStep}/>;
+			return <RegisterAccount nextStep={nextStep} setIsRegisterComponent={setIsRegisterComponent}/>;
 		case 1:
 			return <RegisterPrivacy nextStep={nextStep} />;
 		case 2:
@@ -17,7 +17,7 @@ const getRegisterComponent = (data, nextStep) => {
 	}
 };
 
-const Register = () => {
+const Register = ({ setIsRegisterComponent }) => {
 	const [activeStep, setActiveStep] = useState(0);
 
 	const nextStep = () => {
@@ -27,7 +27,7 @@ const Register = () => {
 	return (
 		<div>
 			<RegisterStepper activeStep={activeStep} />
-			{getRegisterComponent(activeStep, nextStep)}
+			{getRegisterComponent(activeStep, nextStep, setIsRegisterComponent)}
 		</div>
 	);
 };
