@@ -59,12 +59,24 @@ label + .radiobar {
 	margin-top: 1.5rem;
 }
 
+.input-group {
+	margin-top: 10px;
+}
+
 label {
 	font-size: 1rem !important;
 	display: flex !important;
 	align-items: center;
 	font-weight: bold !important;
 	color: $primary !important;
+	font-family: "Inter", sans-serif !important;
+
+	&.muted {
+		font-size: 14px !important;
+		margin-top: 10px;
+		font-weight: normal !important;
+		color: lighten($black, 40%) !important;
+	}
 
 	span {
 		margin-left: 5px;
@@ -75,6 +87,18 @@ label {
 
 .MuiDropzoneArea-root {
 	margin-top: 1rem;
+
+	&.active {
+		display: none;
+	}
+
+	& + .MuiTypography-root {
+		color: $primary;
+		margin-top: 1rem;
+		font-size: 13px;
+		font-weight: 600;
+		font-family: "Inter", sans-serif;
+	}
 }
 
 .MuiDropzoneArea {

@@ -28,18 +28,16 @@ const Layout = (props) => {
     disableHysteresis: true,
     threshold: 100,
   });
-  const [registerShow, setRegisterShow] = useState(false);
+  const [registerShow, setRegisterShow] = useState(true);
   const [successAlertMessage, setSuccessAlertMessage] = useState("");
   const [errorAlertMessage, setErrorAlertMessage] = useState("");
-
-  console.log(errorAlertMessage);
 
   return (
     <ThemeProvider theme={theme}>
       <Navbar setRegisterShow={setRegisterShow} {...props} />
       <span id="back-to-top-anchor"></span>
       {registerShow ? (
-        <RegisterLoginBase setRegisterShow={setRegisterShow} />
+        <RegisterLoginBase setRegisterShow={setRegisterShow} {...props}/>
       ) : (
         props.children
       )}

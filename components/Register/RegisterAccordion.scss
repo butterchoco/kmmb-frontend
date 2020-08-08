@@ -44,6 +44,7 @@
 
 		&--success {
 			color: $primary;
+			display: flex;
 		}
 
 		&--not-filled {
@@ -51,7 +52,11 @@
 		}
 
 		&--error {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
 			color: $red;
+			font-size: 12px;
 		}
 
 		.material-icons {

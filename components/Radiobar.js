@@ -51,8 +51,9 @@ const Radiobar = ({
         value={value}
         onChange={onChange}
       >
-        {options.map((data) => (
+        {options.map((data, index) => (
           <FormControlLabel
+            key={index}
             value={data.key}
             className={value == data.key ? "active" : ""}
             disabled={disabled}

@@ -6,88 +6,82 @@ import RegisterEducation from "./RegisterEducation";
 import Alert from "../Alert";
 
 const getRegisterComponent = (
-  activeStep,
-  nextStep,
-  setIsRegisterComponent,
-  setDisabledClose,
-  setRegisterShow,
-  setSuccessAlertMessage,
-  setErrorAlertMessage
+	activeStep,
+	nextStep,
+	props,
+	setSuccessAlertMessage,
+	setErrorAlertMessage
 ) => {
-  switch (activeStep) {
-    case 0:
-      return (
-        <RegisterAccount
-          nextStep={nextStep}
-          setRegisterShow={setRegisterShow}
-          setIsRegisterComponent={setIsRegisterComponent}
-          setDisabledClose={setDisabledClose}
-          setSuccessAlertMessage={setSuccessAlertMessage}
-          setErrorAlertMessage={setErrorAlertMessage}
-        />
-      );
-    case 1:
-      return (
-        <RegisterPrivacy
-          nextStep={nextStep}
-          setSuccessAlertMessage={setSuccessAlertMessage}
-          setErrorAlertMessage={setErrorAlertMessage}
-        />
-      );
-    case 2:
-      return (
-        <RegisterEducation
-          setRegisterShow={setRegisterShow}
-          setSuccessAlertMessage={setSuccessAlertMessage}
-          setErrorAlertMessage={setErrorAlertMessage}
-        />
-      );
-    default:
-      return <div>Loading...</div>;
-  }
+	switch (activeStep) {
+		case 0:
+			return (
+				<RegisterAccount
+					nextStep={nextStep}
+					setRegisterShow={props.setRegisterShow}
+					setIsRegisterComponent={props.setIsRegisterComponent}
+					setDisabledClose={props.setDisabledClose}
+					setSuccessAlertMessage={setSuccessAlertMessage}
+					setErrorAlertMessage={setErrorAlertMessage}
+				/>
+			);
+		case 1:
+			return (
+				<RegisterPrivacy
+					nextStep={nextStep}
+					setSuccessAlertMessage={setSuccessAlertMessage}
+					setErrorAlertMessage={setErrorAlertMessage}
+					{...props}
+				/>
+			);
+		case 2:
+			return (
+				<RegisterEducation
+					setRegisterShow={props.setRegisterShow}
+					setSuccessAlertMessage={setSuccessAlertMessage}
+					setErrorAlertMessage={setErrorAlertMessage}
+					{...props}
+				/>
+			);
+		default:
+			return <div>Loading...</div>;
+	}
 };
 
-const Register = ({
-  setIsRegisterComponent,
-  setDisabledClose,
-  setRegisterShow,
-}) => {
-  const [activeStep, setActiveStep] = useState(0);
-  const [successAlertMessage, setSuccessAlertMessage] = useState("");
-  const [errorAlertMessage, setErrorAlertMessage] = useState("");
+const Register = (props) => {
+	const [activeStep, setActiveStep] = useState(2);
+	const [successAlertMessage, setSuccessAlertMessage] = useState("");
+	const [errorAlertMessage, setErrorAlertMessage] = useState("");
 
-  const nextStep = () => {
-    setActiveStep((step) => step + 1);
+	const nextStep = () => {
+		setActiveStep((step) => step + 1);
   };
-
-  return (
-    <div>
-      {successAlertMessage !== "" ? (
-        <Alert
-          variant="success"
-          message={successAlertMessage}
-          setMessage={setSuccessAlertMessage}
-        />
-      ) : null}
-      {errorAlertMessage !== "" ? (
-        <Alert
-          variant="error"
-          message={errorAlertMessage}
-          setMessage={setErrorAlertMessage}
-        />
-      ) : null}
-      <RegisterStepper activeStep={activeStep} />
-      {getRegisterComponent(
-        activeStep,
-        nextStep,
-        setIsRegisterComponent,
-        setDisabledClose,
-        setRegisterShow,
-        setSuccessAlertMessage,
-        setErrorAlertMessage
-      )}
-    </div>
-  );
+  
+	return (
+		<div>
+			{successAlertMessage !== "" ? (
+				<Alert
+					variant="success"
+					message={successAlertMessage}
+					setMessage={setSuccessAlertMessage}
+				/>
+			) : null}
+			{errorAlertMessage !== "" ? (
+				<Alert
+					variant="error"
+					message={errorAlertMessage}
+					setMessage={setErrorAlertMessage}
+				/>
+			) : null}
+			<RegisterStepper activeStep={activeStep} />
+			{getRegisterComponent(
+				activeStep,
+				nextStep,
+				props,
+				setSuccessAlertMessage,
+				setErrorAlertMessage
+			)}
+		</div>
+	);
 };
 
 export default Register;

@@ -3,7 +3,7 @@ import LoginBase from "./Login/LoginBase";
 import { useState, useEffect } from "react";
 import "../styles/FullscreenModal.scss";
 
-const RegisterLoginBase = ({ setRegisterShow }) => {
+const RegisterLoginBase = (props) => {
   const [isRegisterComponent, setIsRegisterComponent] = useState(true);
   const [disabledClose, setDisabledClose] = useState(false);
 
@@ -19,7 +19,7 @@ const RegisterLoginBase = ({ setRegisterShow }) => {
       {!disabledClose ? (
         <button
           className="basic fullscreenModal__close"
-          onClick={() => setRegisterShow(false)}
+          onClick={() => props.setRegisterShow(false)}
         >
           <span className="material-icons">close</span>
         </button>
@@ -34,12 +34,13 @@ const RegisterLoginBase = ({ setRegisterShow }) => {
           <RegisterBase
             setIsRegisterComponent={setIsRegisterComponent}
             setDisabledClose={setDisabledClose}
-            setRegisterShow={setRegisterShow}
+            setRegisterShow={props.setRegisterShow}
+            {...props}
           />
         ) : (
           <LoginBase
             setIsRegisterComponent={setIsRegisterComponent}
-            setRegisterShow={setRegisterShow}
+            setRegisterShow={props.setRegisterShow}
           />
         )}
       </div>
