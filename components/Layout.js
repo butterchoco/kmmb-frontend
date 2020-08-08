@@ -28,7 +28,7 @@ const Layout = (props) => {
     disableHysteresis: true,
     threshold: 100,
   });
-  const [registerShow, setRegisterShow] = useState(true);
+  const [registerShow, setRegisterShow] = useState(false);
   const [successAlertMessage, setSuccessAlertMessage] = useState("");
   const [errorAlertMessage, setErrorAlertMessage] = useState("");
 

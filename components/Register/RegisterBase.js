@@ -48,7 +48,7 @@ const getRegisterComponent = (
 };
 
 const Register = (props) => {
-	const [activeStep, setActiveStep] = useState(2);
+	const [activeStep, setActiveStep] = useState(0);
 	const [successAlertMessage, setSuccessAlertMessage] = useState("");
 	const [errorAlertMessage, setErrorAlertMessage] = useState("");
 
