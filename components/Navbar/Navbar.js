@@ -1,9 +1,6 @@
-import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
-import Button from "@material-ui/core/Button";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Slide from "@material-ui/core/Slide";
 import Link from "next/link";
 import "./Navbar.scss";
@@ -45,11 +42,14 @@ const Navbar = (props) => {
       <AppBar elevation={0} color="inherit">
         <Toolbar>
           <Typography>
-            <img
-              style={{ height: "42px" }}
-              src="/images/logo_KMMB.png"
-              alt="logo_KMMB"
-            />
+            <Link href="/" replace>
+              <img
+                className="navbar__logo"
+                style={{ height: "42px" }}
+                src="/images/logo_KMMB.png"
+                alt="logo_KMMB"
+              />
+            </Link>
           </Typography>
           <div
             style={{

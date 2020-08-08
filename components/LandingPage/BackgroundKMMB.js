@@ -10,10 +10,11 @@ const BackgroundKMMB = () => {
         <h2 className="landingPageContainer__title">Latar Belakang</h2>
         <p className="landingPageContainer__description">
           Kami melihat tantangan perubahan saat ini sebagai kesempatan untuk
-          bergerak dan berdaya. Kami berinisiatif untuk menggerakkan mahasiswa
-          sebagai generasi muda untuk berbagi ide melalui ruang-ruang diskursus
-          dan karya-karya kreatif. Kami percaya terdapat banyak suara mahasiswa
-          yang membawa ide-ide kritisnya sebagai perwujudan dari ilmu yang ia
+          bergerak dan berdaya. Kami berinisiatif menggerakkan mahasiswa dalam
+          peranannya sebagai pemuda untuk berbagi ide melalui ruang-ruang
+          diskursus dan karya-karya kreatif secara merdeka. Kami percaya
+          terdapat banyak suara mahasiswa yang mampu melahirkan ide-ide kritis
+          luar biasa sebagai salah satu bentuk aktualisasi dari ilmu yang ia
           pelajari di bangku perkuliahan.
         </p>
         <div className="landingPageContainer__cto">

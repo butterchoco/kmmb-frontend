@@ -5,9 +5,10 @@ const HeroHeader = (props) => {
   return (
     <div className="heroHeader">
       <CloudVector />
+      <div className="heroHeader__image">
+        <img src="/images/logo_KMMB.png"/>
+      </div>
       <div className="heroHeader__textContainer">
-        <h1 className="heroHeader__title">KMMB 2020</h1>
-        <h4 className="heroHeader__tag">#BreakOurBoundaries!</h4>
         <div className="heroHeader__cto">
           {props.user.uid == undefined ? (
             <button

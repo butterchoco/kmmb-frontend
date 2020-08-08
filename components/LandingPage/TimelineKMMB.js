@@ -6,8 +6,6 @@ import TimelineContent from "@material-ui/lab/TimelineContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
 import KeyboardArrowDown from "@material-ui/icons/KeyboardArrowDown";
 import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import { Box } from "@material-ui/core";
 
 const TimelineKMMB = () => {
   const timeline = [

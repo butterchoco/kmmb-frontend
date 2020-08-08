@@ -30,7 +30,6 @@ class KMMBDocument extends Document {
           <meta name="msapplication-TileColor" content="#ffffff"/>
           <meta name="msapplication-TileImage" content="images/icon/ms-icon-144x144.png"/>
           <meta name="theme-color" content="#ffffff"/>
-          <title>KMMB 2020</title>
         </Head>
         <body>
           <Main />

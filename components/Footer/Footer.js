@@ -64,7 +64,7 @@ const Footer = () => {
             <div className="footer__contact__email">
               <p className="footer__contact__email__title">Kontak kami di</p>
               <p className="footer__contact__email__text">
-                konferensimerdeka@gmail.com
+                konferensimahasiswamerdeka@gmail.com
               </p>
             </div>
           </div>
