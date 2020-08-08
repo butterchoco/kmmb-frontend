@@ -5,7 +5,7 @@ const YoutubeEmbed = () => {
         <h2 className="youtubeEmbed__title">Trailer KMMB 2020</h2>
         <iframe
           className="youtubeEmbed__video"
-          src="https://www.youtube.com/embed/5MCNAtp4SxI"
+          src="https://www.youtube.com/embed/Mxyj8oX6q20"
           frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

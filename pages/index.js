@@ -20,7 +20,7 @@ const Index = (props) => {
         <RegisterLoginBase setRegisterShow={setRegisterShow} />
       ) : (
         <div>
-          <HeroHeader registerShow={registerShow} setRegisterShow={setRegisterShow} />
+          <HeroHeader registerShow={registerShow} setRegisterShow={setRegisterShow} {...props}/>
           <AboutKMMB />
           <BackgroundKMMB />
           <TaglineKMMB />
