@@ -1,0 +1,12 @@
+.MuiTabs-flexContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    font-weight: bold;
+    text-transform: capitalize;
+    color: $secondary;
+    font-size: 0.85rem;
+  }
+}

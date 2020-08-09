@@ -1,5 +1,119 @@
 .profile {
-  padding-top: 10vh;
+  margin-top: 64px;
   width: 100vw;
   background: $primary;
+
+  @media screen and (max-width: 574px) {
+    margin-top: 56px;
+  }
+
+  &__wrapper {
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 5vw;
+
+    @media screen and (min-width: 2560px) {
+      padding: 10vh 10vw;
+    }
+
+    @media screen and (max-width: 574px) {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+
+    @media screen and (max-width: 574px) {
+      flex-direction: column;
+    }
+
+    &__bg {
+      opacity: 0.6;
+      position: absolute;
+      z-index: 0;
+      min-height: 20vw;
+      right: 0;
+      top: 5vh;
+
+      @media screen and (max-width: 574px) {
+        top: 25vh;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    min-height: 30vh;
+    padding: 0 5vw;
+  }
+
+  &__editProfile {
+    margin: 1rem 0;
+    border: 1px solid $secondary;
+  }
+
+  &__photo {
+    flex-basis: 128px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+
+    @media screen and (max-width: 574px) {
+      flex: 1;
+    }
+
+    &__wrapper {
+      min-height: 128px;
+      min-width: 128px;
+      max-height: 128px;
+      max-width: 128px;
+      border-radius: 50%;
+      background: $primary;
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__description {
+    flex: 1;
+
+    @media screen and (max-width: 768px) {
+      &__name {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    @media screen and (max-width: 574px) {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      &__name {
+        margin-bottom: 10px;
+      }
+
+      &__faculty {
+        display: flex;
+        flex-wrap: wrap;
+        span {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
 }

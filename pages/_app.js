@@ -10,15 +10,18 @@ const KMMBApp = ({ Component, pageProps }) => {
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [successAlertMessage, setSuccessAlertMessage] = useState("");
   const [errorAlertMessage, setErrorAlertMessage] = useState("");
+  const [isLoading, setIsloading] = useState(true);
 
   useEffect(() => {
     auth.onAuthStateChanged((userLog) => {
       if (userLog) {
         setUser(userLog);
         setUserLoggedIn(true);
+        setIsloading(false);
       } else {
         setUser({});
         setUserLoggedIn(false);
+        setIsloading(false);
       }
     });
   }, []);
@@ -57,6 +60,8 @@ const KMMBApp = ({ Component, pageProps }) => {
         }
       });
   };
+
+  if (isLoading) return null;
 
   return (
     <div>
