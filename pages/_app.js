@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { db, auth } from "../components/firebase/config";
 import Alert from "../components/Alert";
 import Head from "next/head";
+import Loading from "../components/Loading.js";
 
 const KMMBApp = ({ Component, pageProps }) => {
   const [user, setUser] = useState({});
@@ -50,18 +51,21 @@ const KMMBApp = ({ Component, pageProps }) => {
                 );
                 userLog.delete();
                 auth.signOut();
+                setIsloading(false);
               })
               .catch((error) => {
                 setErrorAlertMessage(error.message);
+                setIsloading(false)
               });
           } else {
             setUserData(data);
+            setIsloading(false);
           }
         }
       });
   };
 
-  if (isLoading) return null;
+  if (isLoading) return <Loading />;
 
   return (
     <div>

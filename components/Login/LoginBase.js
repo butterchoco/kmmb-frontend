@@ -157,7 +157,7 @@ const LoginBase = ({ setIsRegisterComponent, setRegisterShow }) => {
           <path d="M6.4847 17.8743C5.86502 16.0114 5.86502 13.9941 6.4847 12.1312V8.26749H1.57073C-0.527484 12.506 -0.527484 17.4995 1.57073 21.738L6.4847 17.8743Z" />
           <path d="M14.7902 5.93604C16.8993 5.90297 18.9377 6.70767 20.4652 8.1848L24.6888 3.90223C22.0144 1.35584 18.4648 -0.0441201 14.7902 -2.67652e-05C9.19674 -2.67652e-05 4.08165 3.19674 1.57031 8.26747L6.48428 12.1312C7.65297 8.57613 10.9308 5.93604 14.7902 5.93604Z" />
         </svg>
-        Buat akun dengan Google
+        Masuk akun dengan Google
       </button>
       <TextField
         className="registerLoginBase__input registerLoginBase__input--email"
