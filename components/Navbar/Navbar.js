@@ -12,7 +12,6 @@ import { Paper, Badge } from "@material-ui/core";
 const Navbar = (props) => {
   const {
     setRegisterShow,
-    user,
     userData,
     setUser,
     userLoggedIn,
@@ -72,7 +71,7 @@ const Navbar = (props) => {
                 </Link>
               ))}
             </div>
-            {userLoggedIn ? (
+            {userLoggedIn && userData.ketua !== undefined ? (
               <button
                 onClick={() => setProfileNavShow(!profileNavShow)}
                 className="basic primary navbar__profileButton"
@@ -85,7 +84,7 @@ const Navbar = (props) => {
                 ) : (
                   <span className="material-icons">person</span>
                 )}
-                {user.displayName}
+                {userData.ketua.nama_lengkap}
               </button>
             ) : (
               <button

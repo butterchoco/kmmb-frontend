@@ -112,7 +112,8 @@ const PaymentNotUploaded = ({ setStatePayment, userData, user }) => {
         <a className="copytext">Salin Jumlah</a>
       </CopyToClipboard>
       <p className="profileContent__notUploaded__rekening">
-        <span>142-00-1675927-5</span> <span>a.n Lukita Widya Nirmala</span>
+        <span>142-00-1675927-5 (Bank Mandiri)</span>{" "}
+        <span>a.n Lukita Widya Nirmala</span>
       </p>
       <CopyToClipboard
         text="1420016759275"

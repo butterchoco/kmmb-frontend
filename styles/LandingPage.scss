@@ -72,16 +72,7 @@
 
 .heroHeader {
   padding: 15vh 0 5vh 0;
-  height: 70vh;
   background: linear-gradient(180deg, #93f3e7, #ff7614);
-
-  @media screen and (min-width: 1080px) {
-    height: 80vh;
-  }
-
-  @media screen and (max-width: 425px) {
-    height: 40vh;
-  }
 
   &__textContainer {
     display: flex;
