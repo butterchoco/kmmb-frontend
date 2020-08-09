@@ -19,16 +19,14 @@ const UploadedPayment = (stateProposal, setStateProposal, userData, user) => {
     }
   }, [userData]);
 
-  console.log(linkProposal);
-
   if (stateProposal == "Terverifikasi") {
     return (
       <div className="profileContent--center">
         <img src="/images/terverifikasi.svg" />
         <h4>Proposal telah diverifikasi</h4>
         <p>
-          Proposal kamu telah diverifikasi. Kamu dapat mendownload proposal yang
-          telah kamu kirim disini
+          Proposal kamu telah diverifikasi. <br />
+          Kamu dapat mendownload proposal yang telah kamu kirim disini !
         </p>
         <a href={linkProposal} target="_blank">
           <button className="secondary" style={{ marginTop: "10px" }}>

@@ -6,13 +6,14 @@ import Link from "next/link";
 import "./Navbar.scss";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { auth } from "../firebase/config";
-import { Paper } from "@material-ui/core";
+import { auth, db } from "../firebase/config";
+import { Paper, Badge } from "@material-ui/core";
 
 const Navbar = (props) => {
   const {
     setRegisterShow,
     user,
+    userData,
     setUser,
     userLoggedIn,
     setUserLoggedIn,
@@ -76,7 +77,14 @@ const Navbar = (props) => {
                 onClick={() => setProfileNavShow(!profileNavShow)}
                 className="basic primary navbar__profileButton"
               >
-                <span className="material-icons">person</span>
+                {userData.verifikasi_pembayaran == "Belum Membayar" ||
+                userData.verifikasi_link_proposal == "Belum Mengupload" ? (
+                  <Badge badgeContent={1} color="secondary">
+                    <span className="material-icons">person</span>
+                  </Badge>
+                ) : (
+                  <span className="material-icons">person</span>
+                )}
                 {user.displayName}
               </button>
             ) : (
@@ -89,6 +97,20 @@ const Navbar = (props) => {
             )}
             {userLoggedIn && profileNavShow ? (
               <Paper className="navbar__profileNav">
+                <Link href="/profile" replace>
+                  <div className="navbar__profileNav__item">
+                    <p>
+                      {userData.verifikasi_pembayaran == "Belum Membayar" ||
+                      userData.verifikasi_link_proposal ==
+                        "Belum Mengupload" ? (
+                        <span className="material-icons notification">
+                          error
+                        </span>
+                      ) : null}
+                      Pembayaran & Proposal
+                    </p>
+                  </div>
+                </Link>
                 <div className="navbar__profileNav__item" onClick={logout}>
                   <p>Keluar</p>
                 </div>

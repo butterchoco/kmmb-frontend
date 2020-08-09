@@ -61,6 +61,17 @@
 			align-items: center;
 			cursor: pointer;
 
+			p {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.notification {
+				color: $primary;
+				margin-right: 5px;
+			}
+
 			&:hover {
 				background: rgba($color: $black, $alpha: 0.1);
 			}
