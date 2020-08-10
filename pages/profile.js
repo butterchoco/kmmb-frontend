@@ -10,7 +10,7 @@ import { storage } from "../components/firebase/config";
 import Alert from "../components/Alert";
 
 const profile = (props) => {
-  const { userData, user, userLoggedIn, router } = props;
+  const { userData, user, userLoggedIn, router, isLoading } = props;
   const [profileSection, setProfileSection] = useState(0);
   const profileSectionOptions = [
     { text: "Biaya Pendaftaran", disabled: false },
@@ -22,8 +22,10 @@ const profile = (props) => {
   );
 
   useEffect(() => {
-    if (!userLoggedIn) {
-      router.push("/");
+    if (!isLoading) {
+      if (!userLoggedIn) {
+        router.push("/");
+      }
     }
   }, [userLoggedIn]);
 
@@ -88,7 +90,7 @@ const profile = (props) => {
                 {userData.ketua.institusi}
               </p>
               <button className="profile__editProfile secondary">
-                Edit Profile
+                <span className="material-icons">edit</span>Edit Profile
               </button>
             </div>
             <img

@@ -324,6 +324,7 @@ const RegisterPrivacy = (props) => {
 										showPreviews={true}
 										showPreviewsInDropzone={false}
 										useChipsForPreview
+										showAlerts={['error']}
 										previewGridProps={{
 											container: { spacing: 1, direction: "row" },
 										}}

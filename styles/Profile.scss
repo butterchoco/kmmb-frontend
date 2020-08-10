@@ -56,6 +56,14 @@
   &__editProfile {
     margin: 1rem 0;
     border: 1px solid $secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    span {
+      font-size: 1rem;
+      margin-right: 5px;
+    }
   }
 
   &__photo {

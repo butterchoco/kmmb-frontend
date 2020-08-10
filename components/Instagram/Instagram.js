@@ -6,6 +6,7 @@ const Instagram = ({ username }) => {
 	const [profile, setProfile] = useState({});
 	const [isLoading, setIsLoading] = useState(false);
 	const [msg, setMsg] = useState("");
+	const [unmounted, setUnmounted] = useState(false);
 
 	useEffect(() => {
 		fetchData();
@@ -13,10 +14,12 @@ const Instagram = ({ username }) => {
 			setProfile({});
 			setIsLoading(false);
 			setMsg("");
+			setUnmounted(true);
 		}
 	}, []);
 
 	const fetchData = async () => {
+		if (unmounted) return;
 		setIsLoading(true);
 		await Axios.get(`https://instagram.com/${username}/?__a=1`)
 			.then(({ data }) => {
@@ -53,6 +56,17 @@ const Instagram = ({ username }) => {
 			</div>
 		);
 	}
+
+	if (msg !== "") {
+    return (
+      <div className="ig">
+        <div className="loading">
+          <i className="material-icons">{msg}</i>
+        </div>
+      </div>
+    );
+  }
+
 	return (
 		<div className="ig">
 			<div className="ig__profile">

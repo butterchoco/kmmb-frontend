@@ -42,6 +42,7 @@ const RegisterEducation = (props) => {
 		setSuccessAlertMessage,
 		setErrorAlertMessage,
 		user,
+		fetchUserData
 	} = props;
 	const classes = useStyles();
 	const RegisterBioPanel = ["ketua", "anggota_1", "anggota_2"];
@@ -112,7 +113,6 @@ const RegisterEducation = (props) => {
 		const extensionAllowed = ["pdf"];
 		let formFilled = true;
 		const tempError = _.cloneDeep(error);
-		let alertError = "";
 		let suratKeteranganMahasiswa = [""];
 		if (formFileData !== undefined)
 			suratKeteranganMahasiswa = formFileData.name.split(".");
@@ -275,6 +275,7 @@ const RegisterEducation = (props) => {
 					"Berhasil isi data mahasiswa. Silahkan lakukan pembayaran pendaftaran !"
 				);
 				setRegisterShow(false);
+				fetchUserData(user)
 			})
 			.catch(() => {
 				setIsLoading(false);
@@ -344,6 +345,7 @@ const RegisterEducation = (props) => {
 										clearOnUnmount
 										showPreviews={true}
 										showPreviewsInDropzone={false}
+										showAlerts={['error']}
 										useChipsForPreview
 										previewGridProps={{
 											container: { spacing: 1, direction: "row" },

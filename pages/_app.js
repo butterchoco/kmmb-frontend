@@ -11,18 +11,18 @@ const KMMBApp = ({ Component, pageProps }) => {
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [successAlertMessage, setSuccessAlertMessage] = useState("");
   const [errorAlertMessage, setErrorAlertMessage] = useState("");
-  const [isLoading, setIsloading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     auth.onAuthStateChanged((userLog) => {
       if (userLog) {
         setUser(userLog);
         setUserLoggedIn(true);
-        setIsloading(false);
+        setIsLoading(false);
       } else {
         setUser({});
         setUserLoggedIn(false);
-        setIsloading(false);
+        setIsLoading(false);
       }
     });
   }, []);
@@ -32,6 +32,7 @@ const KMMBApp = ({ Component, pageProps }) => {
   }, [userLoggedIn]);
 
   const fetchUserData = (userLog) => {
+    setIsLoading(true);
     db.collection("user")
       .doc(userLog.uid)
       .get()
@@ -47,25 +48,21 @@ const KMMBApp = ({ Component, pageProps }) => {
               .delete()
               .then(() => {
                 setErrorAlertMessage(
-                  "Akun dihapus dari sistem karna biodata belum terisi sepenuhnya. Silahkan melakukan registrasi ulang !"
+                  "Akun dihapus dari sistem karena biodata belum terisi sepenuhnya. Silahkan melakukan registrasi ulang !"
                 );
                 userLog.delete();
                 auth.signOut();
-                setIsloading(false);
               })
               .catch((error) => {
                 setErrorAlertMessage(error.message);
-                setIsloading(false)
               });
           } else {
             setUserData(data);
-            setIsloading(false);
           }
         }
+        setIsLoading(false);
       });
   };
-
-  if (isLoading) return <Loading />;
 
   return (
     <div>
@@ -87,12 +84,16 @@ const KMMBApp = ({ Component, pageProps }) => {
         />
       ) : null}
 
+      {isLoading ? <Loading /> : null}
       <Component
         user={user}
         setUser={setUser}
         userLoggedIn={userLoggedIn}
         setUserLoggedIn={setUserLoggedIn}
         userData={userData}
+        fetchUserData={fetchUserData}
+        isLoading={isLoading}
+        setIsloading={setIsLoading}
         {...pageProps}
       ></Component>
     </div>
