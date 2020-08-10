@@ -92,7 +92,7 @@ const Instagram = ({ username }) => {
 								</div>
 							</div>
 							<div className="ig__profile__header__content__right__goto">
-								<a href={"https://instagram.com/" + username} target="_blank">
+								<a href={"https://instagram.com/" + username} target="_blank" rel="noopener">
 									<button className="primary">Go to profile</button>
 								</a>
 							</div>
@@ -108,6 +108,7 @@ const Instagram = ({ username }) => {
 						className="ig__profile__description__web"
 						href={profile.website}
 						target="_blank"
+						rel="noopener"
 					>
 						{profile.website}
 					</a>

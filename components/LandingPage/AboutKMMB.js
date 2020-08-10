@@ -24,7 +24,7 @@ const AboutKMMB = () => {
         </div>
       </div>
       <div className="landingPageContainer__image">
-        <img src="/images/conference.jpg" />
+        <img src="/images/conference.jpg" alt="conference"/>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const HeroHeader = (props) => {
     <div className="heroHeader">
       <CloudVector />
       <div className="heroHeader__image">
-        <img src="/images/logo_KMMB.png"/>
+        <img src="/images/logo_KMMB.png" alt="logo"/>
       </div>
       <div className="heroHeader__textContainer">
         <div className="heroHeader__cto">

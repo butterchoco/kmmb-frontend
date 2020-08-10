@@ -5,7 +5,7 @@ const BackgroundKMMB = () => {
   return (
     <div id="backgroundLandingPage" className="landingPageContainer">
       <div className="landingPageContainer__image">
-        <img src="/images/innovation.jpg" />
+        <img src="/images/innovation.jpg" alt="innovation"/>
       </div>
       <div className="landingPageContainer__textContainer landingPageContainer__textContainer--left">
         <h2 className="landingPageContainer__title">Latar Belakang</h2>

@@ -28,7 +28,7 @@ const Event = (props) => {
             aktivitas di era baru ini sekaligus merupakan gambaran wajah baru
             Indonesia berada di tangan pemuda.
           </p>
-          <img src="/images/competition.jpg" />
+          <img src="/images/competition.jpg" alt="competition"/>
           <h3>Talkshow KMMB</h3>
           <p>
             “Aktualisasi Diri Pemuda di Indonesia yang Baru”
@@ -52,7 +52,7 @@ const Event = (props) => {
             terkait dengan bagaimana mahasiswa sebagai individu merdeka belajar
             dapat memberikan peran kepada masyarakat.
           </p>
-          <img src="/images/talkshow.jpg" />
+          <img src="/images/talkshow.jpg" alt="talkshow"/>
           <h3>Ikrar Mahasiswa Merdeka</h3>
           <p>
             Sebuah aksi untuk menyuarakan ikrar para mahasiswa dalam

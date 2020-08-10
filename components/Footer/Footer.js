@@ -9,12 +9,12 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer__top">
-        <img src="/images/footer_top.svg" />
+        <img src="/images/footer_top.svg" alt="wave"/>
       </div>
       <div className="footer__content">
         <div className="footer__content__top">
           <div className="footer__logoContainer">
-            <img className="footer__logo" src="/images/logo_KMMB.png" />
+            <img className="footer__logo" src="/images/logo_KMMB.png" alt="logo"/>
             <h3 className="footer__company">KMMB 2020</h3>
           </div>
         </div>
@@ -39,25 +39,25 @@ const Footer = () => {
                   className="footer__contact__socialMedia__logos__facebook"
                   href=""
                 >
-                  <img src="/images/facebook.png" />
+                  <img src="/images/facebook.png" alt="facebook"/>
                 </Link>
                 <Link
                   className="footer__contact__socialMedia__logos__youtube"
                   href=""
                 >
-                  <img src="/images/youtube.png" />
+                  <img src="/images/youtube.png" alt="youtube"/>
                 </Link>
                 <Link
                   className="footer__contact__socialMedia__logos__instagram"
                   href="https://instagram.com/mahasiswamerdekabelajar"
                 >
-                  <img src="/images/instagram.png" />
+                  <img src="/images/instagram.png" alt="instagram"/>
                 </Link>
                 <Link
                   className="footer__contact__socialMedia__logos__line"
                   href=""
                 >
-                  <img src="/images/line.png" />
+                  <img src="/images/line.png" alt="line"/>
                 </Link>
               </div>
             </div>

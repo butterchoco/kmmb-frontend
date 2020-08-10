@@ -74,6 +74,7 @@ const profile = (props) => {
                       ? profilePhoto
                       : null
                   }
+                  alt="profile"
                 />
               </div>
             </div>
@@ -96,6 +97,7 @@ const profile = (props) => {
             <img
               className="profile__header__bg"
               src="/images/profile-header-bg.svg"
+              alt="profile_header"
             />
           </div>
           <div className="profile__warning">

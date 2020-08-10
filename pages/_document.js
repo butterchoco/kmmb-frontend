@@ -17,6 +17,7 @@ class KMMBDocument extends Document {
           <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
             rel="stylesheet"
+            rel="preload"
           />
           <link
             rel="stylesheet"
@@ -91,7 +92,7 @@ class KMMBDocument extends Document {
             sizes="16x16"
             href="images/icon/favicon-16x16.png"
           />
-          <link rel="manifest" href="images/icon/manifest.json" />
+          <link rel="manifest" href="manifest.json" />
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta
             name="msapplication-TileImage"

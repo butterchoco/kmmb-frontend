@@ -41,7 +41,7 @@ const About = (props) => {
             terjadi di Indonesia beberapa waktu terakhir ini dengan berbagai
             perspektif keilmuan yang dimiliki.
           </p>
-          <img src="/images/innovation.jpg" />
+          <img src="/images/innovation.jpg" alt="innovation"/>
           <h3>Latar Belakang</h3>
           <p>
             Kami melihat tantangan perubahan saat ini sebagai kesempatan untuk

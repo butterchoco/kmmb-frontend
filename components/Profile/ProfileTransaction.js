@@ -11,7 +11,7 @@ const UploadedPayment = (statePayment, setStatePayment, userData, user) => {
   if (statePayment == "Terverifikasi") {
     return (
       <div className="profileContent--center">
-        <img src="/images/terverifikasi.svg" />
+        <img src="/images/terverifikasi.svg" alt="verified"/>
         <h4>Akun Terverifikasi</h4>
         <p>
           Kamu dapat mengupload proposalmu sekarang.
@@ -40,7 +40,7 @@ const UploadedPayment = (statePayment, setStatePayment, userData, user) => {
   } else if (statePayment == "Menunggu Verifikasi") {
     return (
       <div className="profileContent--center">
-        <img src="/images/menunggu_verifikasi.svg" />
+        <img src="/images/menunggu_verifikasi.svg" alt="waiting_verified"/>
         <h4>Tunggu konfirmasi dari kami</h4>
         <p>
           Pembayaran kamu sedang diverifikasi, periksa profil kamu lagi setelah

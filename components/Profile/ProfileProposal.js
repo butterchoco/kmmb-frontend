@@ -22,13 +22,13 @@ const UploadedPayment = (stateProposal, setStateProposal, userData, user) => {
   if (stateProposal == "Terverifikasi") {
     return (
       <div className="profileContent--center">
-        <img src="/images/terverifikasi.svg" />
+        <img src="/images/terverifikasi.svg" alt="verified" />
         <h4>Proposal telah diverifikasi</h4>
         <p>
           Proposal kamu telah diverifikasi. <br />
           Kamu dapat mendownload proposal yang telah kamu kirim disini !
         </p>
-        <a href={linkProposal} target="_blank">
+        <a href={linkProposal} target="_blank" rel="noopener">
           <button className="secondary" style={{ marginTop: "10px" }}>
             Download Proposal
           </button>
@@ -55,7 +55,7 @@ const UploadedPayment = (stateProposal, setStateProposal, userData, user) => {
   } else if (stateProposal == "Menunggu Verifikasi") {
     return (
       <div className="profileContent--center">
-        <img src="/images/menunggu_verifikasi_proposal.svg" />
+        <img src="/images/menunggu_verifikasi_proposal.svg" alt="waiting_verified"/>
         <h4>Menunggu verifikasi proposal</h4>
         <p>
           Proposal kamu sedang kami verifikasi. Kamu dapat mendownload proposal
