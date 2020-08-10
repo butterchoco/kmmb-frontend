@@ -1,4 +1,5 @@
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
+import Link from "next/link";
 
 const AboutKMMB = () => {
   return (
@@ -14,10 +15,12 @@ const AboutKMMB = () => {
           dan berkreasi tanpa batas.
         </p>
         <div className="landingPageContainer__cto">
-          <button className="secondary">
-            Baca Selanjutnya
-            <KeyboardArrowRightIcon />
-          </button>
+          <Link href="/about">
+            <button className="secondary">
+              Baca Selanjutnya
+              <KeyboardArrowRightIcon />
+            </button>
+          </Link>
         </div>
       </div>
       <div className="landingPageContainer__image">

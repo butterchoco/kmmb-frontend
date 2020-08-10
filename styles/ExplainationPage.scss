@@ -1,0 +1,65 @@
+.explainationPage {
+  margin-top: 64px;
+  background: $primary;
+
+  @media screen and (max-width: 425px) {
+    margin-top: 56px;
+  }
+
+  &__hero {
+    background: url("/images/conference.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 20vh;
+
+    &__wrapper {
+      padding: 20vh 10vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(
+        to bottom,
+        rgba($color: $black, $alpha: 0),
+        rgba($color: $primary, $alpha: 1)
+      );
+    }
+
+    &__title {
+      color: $white;
+      font-size: 72px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  &__content {
+    padding: 5vh 8vw;
+
+    @media screen and (min-width: 1440px) {
+      padding: 20vh 20vw;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      color: $white;
+      margin-bottom: 1rem;
+      white-space: pre-wrap;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    img {
+      margin: 2.5rem 0;
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+}

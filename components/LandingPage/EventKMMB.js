@@ -1,6 +1,8 @@
 import CloudVector from "../Vector/CloudVector";
 import Paper from "@material-ui/core/Paper";
 import "../../styles/Card.scss";
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
+import Link from "next/link";
 
 const EventKMMB = () => {
   const event = [
@@ -33,6 +35,12 @@ const EventKMMB = () => {
           </Paper>
         ))}
       </div>
+      <Link href="/event">
+        <button className="secondary">
+          Baca Selanjutnya
+          <KeyboardArrowRightIcon />
+        </button>
+      </Link>
     </div>
   );
 };

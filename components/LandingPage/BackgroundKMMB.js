@@ -1,4 +1,5 @@
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
+import Link from "next/link";
 
 const BackgroundKMMB = () => {
   return (
@@ -18,10 +19,12 @@ const BackgroundKMMB = () => {
           pelajari di bangku perkuliahan.
         </p>
         <div className="landingPageContainer__cto">
-          <button className="secondary">
-            Baca Selanjutnya
-            <KeyboardArrowRightIcon />
-          </button>
+          <Link href="/about">
+            <button className="secondary">
+              Baca Selanjutnya
+              <KeyboardArrowRightIcon />
+            </button>
+          </Link>
         </div>
       </div>
     </div>

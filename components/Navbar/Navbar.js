@@ -19,8 +19,8 @@ const Navbar = (props) => {
   } = props;
   const router = useRouter();
   const links = [
-    { name: "Tentang Kami", to: "#aboutLandingPage" },
-    { name: "Acara", to: "#eventLandingPage" },
+    { name: "Tentang Kami", to: "/about" },
+    { name: "Acara", to: "/event" },
   ];
   const [mobileNavShow, setMobileNavShow] = useState(false);
   const [profileNavShow, setProfileNavShow] = useState(false);
