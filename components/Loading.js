@@ -1,21 +1,9 @@
-import React from "react";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import "../styles/Loading.scss";
 
 export default function Loading() {
-	return (
-		<div
-			style={{
-				display: "flex",
-				justifyContent: "center",
-				alignItems: "center",
-				height: "100vh",
-				width: "100vw",
-				background: "white",
-				position: "absolute",
-				zIndex: "10000"
-			}}
-		>
-			<CircularProgress color="primary" />
-		</div>
-	);
+  return (
+    <div className="LoadingContainer">
+      <img className="LoadingContainer__loader" src="images/logo_KMMB.png" alt="logo" />
+    </div>
+  );
 }

@@ -81,6 +81,7 @@ button {
 	align-items: center;
 	justify-content: center;
 	outline: none;
+	text-transform: capitalize !important;
 
 	& ~ button {
 		margin-left: 16px;

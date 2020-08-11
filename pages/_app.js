@@ -4,8 +4,10 @@ import { db, auth } from "../components/firebase/config";
 import Alert from "../components/Alert";
 import Head from "next/head";
 import Loading from "../components/Loading.js";
+import { useRouter } from "next/router";
 
 const KMMBApp = ({ Component, pageProps }) => {
+  const router = useRouter();
   const [user, setUser] = useState({});
   const [userData, setUserData] = useState({});
   const [userLoggedIn, setUserLoggedIn] = useState(false);
@@ -14,6 +16,8 @@ const KMMBApp = ({ Component, pageProps }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    router.events.on("routeChangeStart", () => setIsLoading(true));
+    router.events.on("routeChangeComplete", () => setIsLoading(false));
     auth.onAuthStateChanged((userLog) => {
       if (userLog) {
         setUser(userLog);

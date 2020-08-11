@@ -56,21 +56,23 @@ const TextField = ({
 }) => {
 	const [typePassword, setTypePassword] = useState(false);
 	const [tooltipShow, setTooltipShow] = useState(false);
+	const [cursorX, setCursorX] = useState(0);
 
 	return (
 		<FormControl className={className !== undefined ? className + " formField": "formField"}>
 			{tooltipShow ? (
-				<Paper className="formField__tooltip">
+				<Paper className="formField__tooltip" style={{ transform: `translate(${cursorX}px)` }}>
 					{tooltip.split("\\n").map((item, i) => (
 						<p key={i}>{item}</p>
 					))}
 				</Paper>
 			) : null}
-			<InputLabel shrink htmlFor="bootstrap-input">
+			<InputLabel shrink>
 				{label}
 				{tooltip !== undefined && tooltip !== "" ? (
 					<span
 						className="material-icons"
+						onMouseMove={(e) => setCursorX(window.outerWidth)}
 						onMouseEnter={() => setTooltipShow(true)}
 						onMouseLeave={() => setTooltipShow(false)}
 					>

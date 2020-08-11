@@ -1,13 +1,14 @@
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 import { useState, useEffect } from "react";
-import Tabs from "../components/CustomTabs";
-import "../styles/Profile.scss";
-import "../styles/Tabs.scss";
-import ProfileTransaction from "../components/Profile/ProfileTransaction";
-import ProfileProposal from "../components/Profile/ProfileProposal";
+import Tabs from "../../components/CustomTabs";
+import "../../styles/Profile.scss";
+import "../../styles/Tabs.scss";
+import ProfileTransaction from "../../components/Profile/ProfileTransaction";
+import ProfileProposal from "../../components/Profile/ProfileProposal";
 import { withRouter } from "next/router";
-import { storage } from "../components/firebase/config";
-import Alert from "../components/Alert";
+import { storage } from "../../components/firebase/config";
+import Alert from "../../components/Alert";
+import Link from "next/link";
 
 const profile = (props) => {
   const { userData, user, userLoggedIn, router, isLoading } = props;
@@ -90,9 +91,11 @@ const profile = (props) => {
               <p className="profile__description__institution">
                 {userData.ketua.institusi}
               </p>
-              <button className="profile__editProfile secondary">
-                <span className="material-icons">edit</span>Edit Profile
-              </button>
+              <Link href="/profile/details" replace>
+                <button className="profile__editProfile secondary">
+                  <span className="material-icons">edit</span>Detail Profil
+                </button>
+              </Link>
             </div>
             <img
               className="profile__header__bg"

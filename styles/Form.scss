@@ -17,6 +17,10 @@
     }
   }
 
+  .Mui-disabled {
+    cursor: not-allowed;
+  }
+
   &.invers {
     label {
       color: $white !important;
@@ -38,14 +42,13 @@
   label {
     position: relative;
     width: auto;
-    margin-right: 10px;
-    margin-left: 0;
+    margin: 4px;
     padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid darken($white, 10%);
     color: darken($white, 40%) !important;
 
-    &:hover {
+    &:not(.Mui-disabled):hover {
       background: $secondary !important;
       color: $white !important;
     }
@@ -83,7 +86,7 @@ label {
     color: lighten($black, 40%) !important;
   }
 
-  span {
+  span.material-icons {
     margin-left: 5px;
     font-size: 18px !important;
     cursor: pointer;

@@ -45,7 +45,7 @@ const RegisterPrivacy = (props) => {
 	} = props;
 	const classes = useStyles();
 	const RegisterBioPanel = ["ketua", "anggota_1", "anggota_2"];
-	const [ActiveRegisterBioPanel, setActiveRegisterBioPanel] = useState("Ketua");
+	const [ActiveRegisterBioPanel, setActiveRegisterBioPanel] = useState("ketua");
 	const [isLoading, setIsLoading] = useState(false);
 	const [form, setForm] = useState({
 		bukti_pembayaran: "",
