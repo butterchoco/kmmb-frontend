@@ -73,10 +73,13 @@ const EditPrivacy = (props) => {
 
   const checkForm = (data) => {
     if (form[data].nomor_telepon === "") {
-      setErrorAlertMessage("Nomor telepon tidak boleh kosong !");
+      setErrorAlertMessage(`Nomor telepon ${data} tidak boleh kosong !`);
       return false;
     } else if (form[data].email === "") {
-      setErrorAlertMessage("Email tidak boleh kosong !");
+      setErrorAlertMessage(`Email ${data} tidak boleh kosong !`);
+      return false;
+    } else if (!form[data].email.includes("@")) {
+      setErrorAlertMessage(`Format Email ${data} tidak benar !`);
       return false;
     }
     return true;
