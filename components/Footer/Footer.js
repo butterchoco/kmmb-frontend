@@ -37,13 +37,13 @@ const Footer = () => {
               <div className="footer__contact__socialMedia__logos">
                 <Link
                   className="footer__contact__socialMedia__logos__facebook"
-                  href=""
+                  href="https://www.facebook.com/Konferensi-Mahasiswa-Merdeka-Belajar-106120811167549"
                 >
                   <img src="/images/facebook.png" alt="facebook"/>
                 </Link>
                 <Link
                   className="footer__contact__socialMedia__logos__youtube"
-                  href=""
+                  href="https://www.youtube.com/channel/UCGvB1n08wsPtny7C8VXu-pw/featured"
                 >
                   <img src="/images/youtube.png" alt="youtube"/>
                 </Link>
@@ -55,7 +55,7 @@ const Footer = () => {
                 </Link>
                 <Link
                   className="footer__contact__socialMedia__logos__line"
-                  href=""
+                  href="http://line.me/ti/p/@526addcj"
                 >
                   <img src="/images/line.png" alt="line"/>
                 </Link>
