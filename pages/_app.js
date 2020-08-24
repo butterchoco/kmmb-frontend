@@ -1,3 +1,5 @@
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "../styles/global.scss";
 import { useState, useEffect } from "react";
 import { db, auth } from "../components/firebase/config";

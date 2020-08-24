@@ -283,6 +283,58 @@
   }
 }
 
+.speakers {
+  padding: 20vh 20vw;
+  background: $primary;
+  color: white;
+
+  @media screen and (max-width: 768px) {
+    padding: 25vh 10vw;
+  }
+
+  @media screen and (max-width: 425px) {
+    padding: 10vh 5vw;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  &__photo {
+    height: 20vw;
+    
+    @media screen and (max-width: 768px) {
+      height: 35vw;
+    }
+
+    @media screen and (max-width: 425px) {
+      height: 35vw;
+    }
+    
+    &__wrapper {
+      height: 100%;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      border-radius: 10px;
+      
+      img {
+        border-radius: 10px;
+        min-height: 100%;
+      }
+    }
+
+    &__text {
+      margin: 10px;
+    }
+  }
+}
+
 .youtubeEmbed {
   background: $primary;
   display: flex;

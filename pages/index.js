@@ -4,7 +4,7 @@ import AboutKMMB from "../components/LandingPage/AboutKMMB";
 import BackgroundKMMB from "../components/LandingPage/BackgroundKMMB";
 import TaglineKMMB from "../components/LandingPage/TaglineKMMB";
 import EventKMMB from "../components/LandingPage/EventKMMB";
-// import TimelineKMMB from "../components/LandingPage/TimelineKMMB";
+import SpeakersKMMB from "../components/LandingPage/SpeakersKMMB";
 import YoutubeEmbed from "../components/LandingPage/YoutubeEmbed";
 import InstagramEmbed from "../components/LandingPage/InstagramEmbed";
 import "../styles/LandingPage.scss";
@@ -21,6 +21,7 @@ const Index = (props) => {
       ) : (
         <div>
           <HeroHeader registerShow={registerShow} setRegisterShow={setRegisterShow} {...props}/>
+          <SpeakersKMMB />
           <AboutKMMB />
           <BackgroundKMMB />
           <TaglineKMMB />

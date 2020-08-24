@@ -140,3 +140,14 @@ button {
 	padding: 2rem;
 	box-shadow: 0 0 10px rgba($color: $black, $alpha: 0.3);
 }
+
+.slick-track {
+	div {
+		outline: none;
+		cursor: grab;
+
+		&:active {
+			cursor: grabbing;
+		}
+	}
+}
