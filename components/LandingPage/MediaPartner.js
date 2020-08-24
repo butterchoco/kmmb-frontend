@@ -47,41 +47,49 @@ const MediaPartner = () => {
   return (
     <div className="mediaPartner">
       <h2 className="mediaPartner__title">Media Partner</h2>
-      <div className="mediaPartner__logoContainer__extralarge">
-        {mediaPartner.map((data, index) => {
-          if (data.size == "XL") {
-            return <img
-              className="mediaPartner__logo"
-              src={data.photo}
-              alt={data.name}
-              key={index}
-            />
-          }
-        })}
-      </div>
-      <div className="mediaPartner__logoContainer__large">
-        {mediaPartner.map((data, index) => {
-          if (data.size == "L") {
-            return <img
-              className="mediaPartner__logo"
-              src={data.photo}
-              alt={data.name}
-              key={index}
-            />
-          }
-        })}
-      </div>
-      <div className="mediaPartner__logoContainer__medium">
-        {mediaPartner.map((data, index) => {
-          if (data.size == "XL") {
-            return <img
-              className="mediaPartner__logo"
-              src={data.photo}
-              alt={data.name}
-              key={index}
-            />
-          }
-        })}
+      <div className="mediaPartner__logoContainer">
+        <div className="mediaPartner__logoContainer__extralarge">
+          {mediaPartner.map((data, index) => {
+            if (data.size == "XL") {
+              return (
+                <img
+                  className="mediaPartner__logo"
+                  src={data.photo}
+                  alt={data.name}
+                  key={index}
+                />
+              );
+            }
+          })}
+        </div>
+        <div className="mediaPartner__logoContainer__large">
+          {mediaPartner.map((data, index) => {
+            if (data.size == "L") {
+              return (
+                <img
+                  className="mediaPartner__logo"
+                  src={data.photo}
+                  alt={data.name}
+                  key={index}
+                />
+              );
+            }
+          })}
+        </div>
+        <div className="mediaPartner__logoContainer__medium">
+          {mediaPartner.map((data, index) => {
+            if (data.size == "M") {
+              return (
+                <img
+                  className="mediaPartner__logo"
+                  src={data.photo}
+                  alt={data.name}
+                  key={index}
+                />
+              );
+            }
+          })}
+        </div>
       </div>
     </div>
   );

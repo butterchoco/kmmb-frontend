@@ -403,29 +403,38 @@
   justify-content: center;
   padding: 10vh 20vw;
 
+  @media screen and (max-width: 425px) {
+    padding: 10vh 5vw;
+  }
+
   &__logoContainer {
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
-  }
 
-  &__logo {
-    max-height: 32px;
-    max-width: 32px;
-    margin: 5px;
+    &__extralarge img {
+      max-height: 128px;
+      max-width: 128px;
+    }
 
-    @media screen and (min-width: 1440px) {
+    &__large img {
+      max-height: 96px;
+      max-width: 96px;
+    }
+
+    &__medium img {
       max-height: 64px;
       max-width: 64px;
     }
   }
-}
 
-.sponsor,
-.mediaPartner {
   &__title {
     font-weight: bold;
     color: $white;
+  }
+
+  &__logo {
+    margin: 5px;
   }
 }
 

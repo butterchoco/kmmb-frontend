@@ -48,14 +48,48 @@ const Sponsor = () => {
     <div className="sponsor">
       <h2 className="sponsor__title">Disponsori Oleh</h2>
       <div className="sponsor__logoContainer">
-        {sponsor.map((data, index) => (
-          <img
-            className="sponsor__logo"
-            src={data.photo}
-            alt={data.name}
-            key={index}
-          />
-        ))}
+        <div className="sponsor__logoContainer__extralarge">
+          {sponsor.map((data, index) => {
+            if (data.size == "XL") {
+              return (
+                <img
+                  className="sponsor__logo"
+                  src={data.photo}
+                  alt={data.name}
+                  key={index}
+                />
+              );
+            }
+          })}
+        </div>
+        <div className="sponsor__logoContainer__large">
+          {sponsor.map((data, index) => {
+            if (data.size == "L") {
+              return (
+                <img
+                  className="sponsor__logo"
+                  src={data.photo}
+                  alt={data.name}
+                  key={index}
+                />
+              );
+            }
+          })}
+        </div>
+        <div className="sponsor__logoContainer__medium">
+          {sponsor.map((data, index) => {
+            if (data.size == "M") {
+              return (
+                <img
+                  className="sponsor__logo"
+                  src={data.photo}
+                  alt={data.name}
+                  key={index}
+                />
+              );
+            }
+          })}
+        </div>
       </div>
     </div>
   );
