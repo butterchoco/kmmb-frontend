@@ -40,49 +40,11 @@
     margin-right: 10px;
   }
 
-  &__sponsor,
-  &__mediaPartner {
-    &__logoContainer {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    &__logo {
-      max-height: 32px;
-      max-width: 32px;
-      margin: 5px;
-
-      @media screen and (min-width: 1440px) {
-        max-height: 64px;
-        max-width: 64px;
-      }
-    }
-  }
-
-  &__sponsor,
-  &__mediaPartner,
   &__contact__socialMedia,
   &__contact__email {
     &__title {
       font-weight: bold;
       color: $secondary;
-    }
-  }
-
-  &__sponsor {
-    flex: 1;
-    &__logos {
-      display: flex;
-      flex-wrap: wrap;
-    }
-  }
-
-  &__mediaPartner {
-    flex: 1;
-    &__logos {
-      display: flex;
-      flex-wrap: wrap;
     }
   }
 

@@ -10,6 +10,8 @@ import InstagramEmbed from "../components/LandingPage/InstagramEmbed";
 import "../styles/LandingPage.scss";
 import { useState } from "react";
 import RegisterLoginBase from "../components/RegisterLoginBase";
+import MediaPartner from "../components/LandingPage/MediaPartner";
+import Sponsor from "../components/LandingPage/Sponsor";
 
 const Index = (props) => {
   const [registerShow, setRegisterShow] = useState(false);
@@ -29,6 +31,8 @@ const Index = (props) => {
           {/* <TimelineKMMB /> */}
           <YoutubeEmbed />
           <InstagramEmbed />
+          <MediaPartner />
+          <Sponsor />
         </div>
       )}
     </Layout>

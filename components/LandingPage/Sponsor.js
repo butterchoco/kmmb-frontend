@@ -45,12 +45,12 @@ const Sponsor = () => {
   if (isLoading || sponsor.length === 0) return null;
 
   return (
-    <div className="footer__sponsor">
-      <p className="footer__sponsor__title">Disponsori Oleh</p>
-      <div className="footer__sponsor__logoContainer">
+    <div className="sponsor">
+      <h2 className="sponsor__title">Disponsori Oleh</h2>
+      <div className="sponsor__logoContainer">
         {sponsor.map((data, index) => (
           <img
-            className="footer__sponsor__logo"
+            className="sponsor__logo"
             src={data.photo}
             alt={data.name}
             key={index}

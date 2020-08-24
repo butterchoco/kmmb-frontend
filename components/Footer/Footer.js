@@ -1,7 +1,5 @@
 import "./Footer.scss";
 import { Link } from "@material-ui/core";
-import MediaPartner from "./MediaPartner";
-import Sponsor from "./Sponsor";
 
 const Footer = () => {
   return (
@@ -21,8 +19,6 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer__content__bottom">
-          <Sponsor />
-          <MediaPartner />
           <div className="footer__contact">
             <div className="footer__contact__socialMedia">
               <p className="footer__contact__socialMedia__title">
