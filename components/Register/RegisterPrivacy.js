@@ -303,7 +303,15 @@ const RegisterPrivacy = (props) => {
 									value={form[data].nomor_telepon}
 									error={error[data].nomor_telepon}
 									onChange={(e) =>
-										handleRoleDataChange(data, "nomor_telepon", e.target.value)
+										{
+											const regex = new RegExp("^(0|[1-9][0-9]*)$");
+											if (e.target.value == "" || regex.test(e.target.value))
+												handleRoleDataChange(
+												data,
+												"nomor_telepon",
+												e.target.value
+												);
+										}
 									}
 								/>
 								<TextField
