@@ -30,7 +30,7 @@ const PaymentNotUploaded = ({ setStatePayment, userData, user }) => {
       setErrorAlertMessage("Masukkan bukti pembayaran anda terlebih dahulu !");
       return false;
     }
-    const paymentProofExtensionAllowed = ["pdf", "png", "jpg", "jpeg"];
+    const paymentProofExtensionAllowed = ["zip"];
     const paymentProoflist = paymentProof.name.split(".");
     const paymentProofExtension = paymentProoflist[paymentProoflist.length - 1];
     if (!paymentProofExtensionAllowed.includes(paymentProofExtension)) {
@@ -124,12 +124,13 @@ const PaymentNotUploaded = ({ setStatePayment, userData, user }) => {
       <div className="input-group">
         <DropzoneArea
           onChange={(files) => setPaymentProof(files[0])}
-          dropzoneText={"Upload Bukti Pembayaran"}
+          dropzoneText={"Upload Syarat Pendaftaran"}
           filesLimit={1}
           clearOnUnmount
           showPreviews={true}
           showPreviewsInDropzone={false}
           useChipsForPreview
+          showAlerts={["error"]}
           previewGridProps={{
             container: { spacing: 1, direction: "row" },
           }}
@@ -139,8 +140,10 @@ const PaymentNotUploaded = ({ setStatePayment, userData, user }) => {
           previewText="Bukti Pembayaran"
         />
         <label className="muted">
-          <span className="material-icons">error</span>Format yang
-          diperbolehkan: pdf, png, jpg, jpeg.
+          <span className="material-icons">error</span>File format zip yang
+          berisi <strong>foto bukti pembayaran</strong> dan{" "}
+          <strong>screenshot postingan tiap anggota kelompok</strong> terkait
+          campaign #ActYourKnowledge beserta <strong>twibbon.</strong>
         </label>
       </div>
       <Button
