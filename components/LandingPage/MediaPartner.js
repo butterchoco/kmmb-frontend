@@ -48,48 +48,48 @@ const MediaPartner = () => {
     <div className="mediaPartner">
       <h2 className="mediaPartner__title">Media Partner</h2>
       <div className="mediaPartner__logoContainer">
-        <div className="mediaPartner__logoContainer__extralarge">
-          {mediaPartner.map((data, index) => {
-            if (data.size == "XL") {
-              return (
+        {mediaPartner.map((data, index) => {
+          if (data.size == "XL") {
+            return (
+              <div className="mediaPartner__logoContainer__extralarge">
                 <img
                   className="mediaPartner__logo"
                   src={data.photo}
                   alt={data.name}
                   key={index}
                 />
-              );
-            }
-          })}
-        </div>
-        <div className="mediaPartner__logoContainer__large">
-          {mediaPartner.map((data, index) => {
-            if (data.size == "L") {
-              return (
+              </div>
+            );
+          }
+        })}
+        {mediaPartner.map((data, index) => {
+          if (data.size == "L") {
+            return (
+              <div className="mediaPartner__logoContainer__large">
                 <img
                   className="mediaPartner__logo"
                   src={data.photo}
                   alt={data.name}
                   key={index}
                 />
-              );
-            }
-          })}
-        </div>
-        <div className="mediaPartner__logoContainer__medium">
-          {mediaPartner.map((data, index) => {
-            if (data.size == "M") {
-              return (
+              </div>
+            );
+          }
+        })}
+        {mediaPartner.map((data, index) => {
+          if (data.size == "M") {
+            return (
+              <div className="mediaPartner__logoContainer__medium">
                 <img
                   className="mediaPartner__logo"
                   src={data.photo}
                   alt={data.name}
                   key={index}
                 />
-              );
-            }
-          })}
-        </div>
+              </div>
+            );
+          }
+        })}
       </div>
     </div>
   );
